@@ -1,0 +1,47 @@
+# Pre-commit hook configuration for RefusalBench
+# Install hooks with: pre-commit install
+# Run manually: pre-commit run --all-files
+#
+# IMPORTANT: The check-no-private-prompts hook is critical for the should-refuse
+# module.  It must not be skipped.  See scripts/hooks/check_no_private_prompts.py.
+
+repos:
+  # ── Should-refuse privacy enforcement (local hook) ─────────────────────────
+  - repo: local
+    hooks:
+      - id: check-no-private-prompts
+        name: "Block should-refuse prompt text from entering public repo"
+        language: python
+        entry: python scripts/hooks/check_no_private_prompts.py
+        pass_filenames: false
+        always_run: true
+        stages: [pre-commit]
+        verbose: true
+        description: >
+          Checks three invariants:
+          (1) No staged file lives under private_artifacts/.
+          (2) No staged file contains both a should_refuse module marker and a
+              prompt_text field (structural leak check).
+          (3) If REFUSALBENCH_PRIVATE_ARTIFACTS_DIR is set, no staged file
+              contains a 50-char leading fragment of any known should-refuse prompt.
+
+  # ── Standard code quality ───────────────────────────────────────────────────
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.4.4
+    hooks:
+      - id: ruff
+        args: [--fix, --exit-non-zero-on-fix]
+      - id: ruff-format
+
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.6.0
+    hooks:
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+      - id: check-yaml
+        args: [--unsafe]   # allows !include etc. in YAML
+      - id: check-json
+      - id: check-merge-conflict
+      - id: debug-statements
+      - id: check-added-large-files
+        args: [--maxkb=5000]

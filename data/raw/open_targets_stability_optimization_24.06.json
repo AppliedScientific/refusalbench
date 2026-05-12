@@ -1,0 +1,56 @@
+{
+  "data": {
+    "targets": {
+      "rows": [
+        {
+          "id": "ENSG00000128052",
+          "approvedName": "kinase insert domain receptor",
+          "approvedSymbol": "KDR",
+          "biotype": "protein_coding",
+          "targetClass": [
+            {"id": 160, "label": "Tyrosine protein kinase VEGFR family"},
+            {"id": 160, "label": "Protein Kinase"},
+            {"id": 160, "label": "Kinase"},
+            {"id": 160, "label": "Enzyme"}
+          ],
+          "proteinIds": [
+            {"id": "P35968", "source": "uniprot_swissprot"}
+          ]
+        },
+        {
+          "id": "ENSG00000109471",
+          "approvedName": "interleukin 2",
+          "approvedSymbol": "IL2",
+          "biotype": "protein_coding",
+          "targetClass": [
+            {"id": 1054, "label": "Cytokine"},
+            {"id": 1054, "label": "Interleukin"}
+          ],
+          "proteinIds": [
+            {"id": "P60568", "source": "uniprot_swissprot"}
+          ]
+        },
+        {
+          "id": "ENSG00000130427",
+          "approvedName": "erythropoietin",
+          "approvedSymbol": "EPO",
+          "biotype": "protein_coding",
+          "targetClass": [
+            {"id": 1054, "label": "Cytokine"},
+            {"id": 1054, "label": "Hematopoietic growth factor"}
+          ],
+          "proteinIds": [
+            {"id": "P01588", "source": "uniprot_swissprot"}
+          ]
+        }
+      ]
+    }
+  },
+  "_meta": {
+    "source": "Open Targets Platform",
+    "version": "24.06",
+    "query_date": "2026-05-07",
+    "subdomain": "stability_optimization",
+    "note": "3 validated human therapeutic protein targets for thermal stability and half-life engineering. All Swiss-Prot reviewed. KDR (VEGFR2) for angiogenesis-targeted biologics; IL2 for immunotherapy; EPO for anemia therapeutics. All are targets of approved or clinical-stage biologics requiring stability engineering."
+  }
+}

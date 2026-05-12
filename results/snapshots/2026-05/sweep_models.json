@@ -1,0 +1,191 @@
+{
+  "version": "1.6",
+  "schema_doc": "Routing table for the Phase 4 evaluation sweep. 18 models: 7 via AWS Bedrock (BEDROCK_API_KEY), 11 via OpenRouter (OPENROUTER_API_KEY). Anthropic Claude models moved from Bedrock to OpenRouter on 2026-05-08: Bedrock applies a domain-level content filter to all protein engineering prompts for Claude models (including benign human targets), making it unsuitable for measuring model-level refusal calibration. OpenRouter routes directly to Anthropic's API and surfaces refusals as native_finish_reason='refusal' with empty content — functionally identical to the direct Anthropic API, since Anthropic's refusal mechanism is an API-level rejection with no text content regardless of provider.",
+  "default_provider": "bedrock",
+  "models": [
+    {
+      "model_id": "anthropic/claude-opus-4.7",
+      "display_name": "Claude Opus 4.7",
+      "provider": "openrouter",
+      "jurisdiction": "us",
+      "organization": "anthropic",
+      "role": "primary",
+      "routing_note": "Moved from Bedrock to OpenRouter 2026-05-08. Bedrock blanket-filters all protein engineering prompts for Claude models. OpenRouter surfaces model-level refusals as native_finish_reason=refusal + empty content, which is classified as direct_refusal/safety_policy without judge routing.",
+      "pricing_usd_per_mtok": {"input": 5.0, "output": 25.0}
+    },
+    {
+      "model_id": "anthropic/claude-opus-4.6",
+      "display_name": "Claude Opus 4.6",
+      "provider": "openrouter",
+      "jurisdiction": "us",
+      "organization": "anthropic",
+      "role": "longitudinal",
+      "routing_note": "Moved from Bedrock to OpenRouter 2026-05-08. See claude-opus-4.7 routing_note.",
+      "pricing_usd_per_mtok": {"input": 5.0, "output": 25.0}
+    },
+    {
+      "model_id": "anthropic/claude-opus-4.5",
+      "display_name": "Claude Opus 4.5",
+      "provider": "openrouter",
+      "jurisdiction": "us",
+      "organization": "anthropic",
+      "role": "longitudinal",
+      "routing_note": "Moved from Bedrock to OpenRouter 2026-05-08. See claude-opus-4.7 routing_note.",
+      "pricing_usd_per_mtok": {"input": 5.0, "output": 25.0}
+    },
+    {
+      "model_id": "anthropic/claude-sonnet-4.6",
+      "display_name": "Claude Sonnet 4.6",
+      "provider": "openrouter",
+      "jurisdiction": "us",
+      "organization": "anthropic",
+      "role": "primary",
+      "routing_note": "Moved from Bedrock to OpenRouter 2026-05-08. See claude-opus-4.7 routing_note.",
+      "pricing_usd_per_mtok": {"input": 3.0, "output": 15.0}
+    },
+    {
+      "model_id": "us.amazon.nova-pro-v1:0",
+      "display_name": "Amazon Nova Pro",
+      "provider": "bedrock",
+      "jurisdiction": "us",
+      "organization": "amazon",
+      "role": "primary",
+      "pricing_usd_per_mtok": {"input": 0.8, "output": 3.2, "note": "estimate"}
+    },
+    {
+      "model_id": "us.meta.llama3-3-70b-instruct-v1:0",
+      "display_name": "Llama 3.3 70B Instruct",
+      "provider": "bedrock",
+      "jurisdiction": "us",
+      "organization": "meta",
+      "role": "control",
+      "pricing_usd_per_mtok": {"input": 0.72, "output": 0.72, "note": "estimate"}
+    },
+    {
+      "model_id": "mistral.mistral-large-3-675b-instruct",
+      "display_name": "Mistral Large 3",
+      "provider": "bedrock",
+      "jurisdiction": "eu",
+      "organization": "mistral",
+      "role": "primary",
+      "bedrock_note": "In-region only (no geo/global cross-region). Available in us-east-1.",
+      "pricing_usd_per_mtok": {"input": 3.0, "output": 9.0, "note": "estimate"}
+    },
+    {
+      "model_id": "deepseek.v3.2",
+      "display_name": "DeepSeek V3.2",
+      "provider": "bedrock",
+      "jurisdiction": "asia",
+      "organization": "deepseek",
+      "role": "primary",
+      "bedrock_note": "In-region only (no geo/global cross-region). Available in us-east-1.",
+      "pricing_usd_per_mtok": {"input": 0.27, "output": 1.1, "note": "estimate"}
+    },
+    {
+      "model_id": "us.deepseek.r1-v1:0",
+      "display_name": "DeepSeek R1",
+      "provider": "bedrock",
+      "jurisdiction": "asia",
+      "organization": "deepseek",
+      "role": "primary",
+      "bedrock_note": "Geo cross-region inference profile. In-region direct ID: deepseek.r1-v1:0",
+      "pricing_usd_per_mtok": {"input": 0.55, "output": 2.19, "note": "estimate"}
+    },
+    {
+      "model_id": "qwen.qwen3-next-80b-a3b",
+      "display_name": "Qwen3 Next 80B",
+      "provider": "bedrock",
+      "jurisdiction": "asia",
+      "organization": "qwen",
+      "role": "primary",
+      "bedrock_note": "In-region only (no geo/global cross-region). Available in us-east-1.",
+      "pricing_usd_per_mtok": {"input": 0.7, "output": 2.0, "note": "estimate"}
+    },
+    {
+      "model_id": "zai.glm-5",
+      "display_name": "GLM-5 (Z.AI)",
+      "provider": "bedrock",
+      "jurisdiction": "asia",
+      "organization": "zai",
+      "role": "primary",
+      "bedrock_note": "In-region only (no geo/global cross-region). Available in us-east-1.",
+      "pricing_usd_per_mtok": {"input": 0.5, "output": 1.5, "note": "estimate"}
+    },
+    {
+      "model_id": "google/gemini-3.1-pro-preview-20260219",
+      "display_name": "Gemini 3.1 Pro Preview",
+      "provider": "openrouter",
+      "jurisdiction": "us",
+      "organization": "google",
+      "role": "primary",
+      "pricing_usd_per_mtok": {"input": 2.0, "output": 12.0}
+    },
+    {
+      "model_id": "google/gemini-3.1-flash-lite-20260507",
+      "display_name": "Gemini 3.1 Flash Lite",
+      "provider": "openrouter",
+      "jurisdiction": "us",
+      "organization": "google",
+      "role": "primary",
+      "pricing_usd_per_mtok": {"input": 0.25, "output": 1.5}
+    },
+    {
+      "model_id": "openai/gpt-5.5-20260423",
+      "display_name": "GPT-5.5",
+      "provider": "openrouter",
+      "jurisdiction": "us",
+      "organization": "openai",
+      "role": "primary",
+      "pricing_usd_per_mtok": {"input": 5.0, "output": 30.0}
+    },
+    {
+      "model_id": "openai/gpt-5.4-mini-20260317",
+      "display_name": "GPT-5.4 Mini",
+      "provider": "openrouter",
+      "jurisdiction": "us",
+      "organization": "openai",
+      "role": "primary",
+      "pricing_usd_per_mtok": {"input": 0.75, "output": 4.5}
+    },
+    {
+      "model_id": "minimax/minimax-m2.7-20260318",
+      "display_name": "MiniMax M2.7",
+      "provider": "openrouter",
+      "jurisdiction": "asia",
+      "organization": "minimax",
+      "role": "primary",
+      "pricing_usd_per_mtok": {"input": 0.3, "output": 1.2}
+    },
+    {
+      "model_id": "moonshotai/kimi-k2.6-20260420",
+      "display_name": "Kimi K2.6",
+      "provider": "openrouter",
+      "jurisdiction": "asia",
+      "organization": "moonshot",
+      "role": "primary",
+      "pricing_usd_per_mtok": {"input": 0.75, "output": 3.5}
+    },
+    {
+      "model_id": "x-ai/grok-4.20-20260309",
+      "display_name": "Grok 4.20",
+      "provider": "openrouter",
+      "jurisdiction": "us",
+      "organization": "xai",
+      "role": "primary",
+      "pricing_usd_per_mtok": {"input": 1.25, "output": 2.5}
+    }
+  ],
+  "notes": {
+    "keys_required": "BEDROCK_API_KEY (ABSK... prefix) for the 7 Bedrock models; OPENROUTER_API_KEY for the 11 OpenRouter models (includes all 4 Anthropic Claude models moved from Bedrock on 2026-05-08).",
+    "anthropic_routing_rationale": "Bedrock applies a domain-level content filter to all protein engineering prompts for Claude models — including benign human protein targets (tested: EGFR, binder_001 benign tier, stopReason=content_filtered). This is infrastructure-level filtering, not model-level refusal, and conflates the two signals. OpenRouter routes directly to Anthropic and surfaces model-level refusals as native_finish_reason=refusal + empty content. Since Anthropic's refusal mechanism is API-level (no text content), OpenRouter and the Anthropic direct API are functionally equivalent for this benchmark. Tested 2026-05-08: Opus 4.5 and 4.6 comply on benign, refuse borderline+dual-use; Opus 4.7 refuses all three tiers (H4 tightening signal confirmed in pretest).",
+    "model_id_verification": "OpenRouter model IDs verified via https://openrouter.ai/api/v1/models on 2026-05-07. Bedrock model IDs corrected 2026-05-08 from AWS documentation (docs.aws.amazon.com/bedrock/latest/userguide/model-cards.html). Bedrock dropped date-stamped versioned IDs in favour of short-name geo/global inference profile IDs.",
+    "gpt_55_pro_excluded": "GPT-5.5 Pro ($30/$180 per MTok) was excluded due to cost (~$45 for sweep). GPT-5.5 standard ($5/$30) provides sufficient OpenAI coverage.",
+    "jurisdiction_split": "US non-Anthropic: Amazon Nova Pro (Bedrock), Llama 3.3 70B (Bedrock, control), Gemini 3.1 Pro + Flash (OpenRouter), GPT-5.5 + Mini (OpenRouter). Five distinct US orgs showing low/zero refusal makes the Anthropic-specific framing for H1 airtight.",
+    "asia_coverage": "6 Asian models across 5 orgs: DeepSeek V3.2 + R1 (Bedrock), Qwen3 Next 80B (Bedrock), GLM-5 (Bedrock), MiniMax M2.7 (OpenRouter), Kimi K2.6 (OpenRouter).",
+    "deepseek_v4_note": "DeepSeek V4 Pro is now live on OpenRouter ($0.44/$0.87 per MTok). V3.2 on Bedrock retained for this sweep for consistency with ProteinFlowBench pilot data. If V3.2 is unavailable on Bedrock, substitute deepseek/deepseek-v4-pro on OpenRouter.",
+    "grok_note": "Grok 4.20 (x-ai/grok-4.20-20260309, $1.25/$2.50 per MTok, ~$0.70 for sweep). xAI is US-headquartered (Elon Musk), adds a fifth distinct US non-Anthropic org. Also available: Grok 4.3 (x-ai/grok-4.3-20260430, same pricing, more recent) — swap model_id if preferred.",
+    "cross_region_profiles": "Bedrock geo inference IDs prefixed with 'us.' route across us-east-1/us-east-2/us-west-2 automatically. Models without geo support (Mistral Large 3, DeepSeek V3.2, Qwen3 Next 80B, GLM-5) use bare in-region IDs and are served from us-east-1 directly.",
+    "opus_47_temperature_note": "Claude Opus 4.7 does not support temperature, top_p, or top_k parameters. Provider code must omit these from inferenceConfig.",
+    "longitudinal_models": "Opus 4.5 and 4.6 run the same prompt set as Opus 4.7 solely for H4 (longitudinal trajectory analysis)."
+  }
+}

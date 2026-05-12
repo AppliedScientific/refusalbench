@@ -1,0 +1,142 @@
+{
+  "version": "v1.0",
+  "seed": 42,
+  "total_experimental_paired_sets": 37,
+  "total_control_prompts": 20,
+  "experimental_subdomains": {
+    "binder_design": {
+      "paired_sets": 9,
+      "benign_stratification": [
+        "oncology",
+        "autoimmune",
+        "metabolic",
+        "neurological",
+        "cardiovascular"
+      ],
+      "borderline_stratification": [
+        "amr_pathogen",
+        "opportunistic_pathogen",
+        "pandemic_virus"
+      ],
+      "dual_use_stratification": [
+        "select_agent",
+        "bsl4",
+        "restricted_toxin"
+      ]
+    },
+    "enzyme_design": {
+      "paired_sets": 8,
+      "benign_stratification": [
+        "industrial",
+        "biosynthesis",
+        "degradation",
+        "diagnostics"
+      ],
+      "borderline_stratification": [
+        "virulence_factor",
+        "resistance_enzyme"
+      ],
+      "dual_use_stratification": [
+        "weaponizable_enzyme",
+        "select_agent_product"
+      ]
+    },
+    "de_novo_protein": {
+      "paired_sets": 6,
+      "benign_stratification": [
+        "de_novo_fold",
+        "therapeutic_scaffold",
+        "material_protein"
+      ],
+      "borderline_stratification": [
+        "immune_evasion_scaffold",
+        "entry_mimic"
+      ],
+      "dual_use_stratification": [
+        "toxin_scaffold",
+        "delivery_scaffold"
+      ]
+    },
+    "stability_optimization": {
+      "paired_sets": 3,
+      "benign_stratification": [
+        "industrial_enzyme",
+        "therapeutic_protein",
+        "research_tool"
+      ],
+      "borderline_stratification": [
+        "pathogen_surface_protein",
+        "amr_protein"
+      ],
+      "dual_use_stratification": [
+        "toxin_stabilization",
+        "select_agent_protein"
+      ]
+    },
+    "sequence_design": {
+      "paired_sets": 6,
+      "benign_stratification": [
+        "ProteinMPNN_scaffold",
+        "rosetta_design",
+        "therapeutic_target"
+      ],
+      "borderline_stratification": [
+        "pathogen_protein",
+        "virulence_mimic"
+      ],
+      "dual_use_stratification": [
+        "select_agent_sequence",
+        "restricted_pathogen"
+      ]
+    },
+    "structure_prediction": {
+      "paired_sets": 5,
+      "benign_stratification": [
+        "human_protein",
+        "model_organism",
+        "industrial_enzyme"
+      ],
+      "borderline_stratification": [
+        "pathogen_protein",
+        "amr_mechanism"
+      ],
+      "dual_use_stratification": [
+        "select_agent_structure",
+        "toxin_fold"
+      ]
+    }
+  },
+  "control_subdomains": {
+    "bioinformatics_scripting": {
+      "benign_only": 10,
+      "task_types": [
+        "sequence_analysis",
+        "phylogeny",
+        "structure_comparison",
+        "database_query",
+        "pipeline_automation"
+      ]
+    },
+    "protocol_design": {
+      "benign_only": 10,
+      "task_types": [
+        "expression_protocol",
+        "purification_protocol",
+        "assay_design",
+        "crystallization",
+        "characterization"
+      ]
+    }
+  },
+  "deduplication": {
+    "exact_duplicate_check": true,
+    "near_duplicate_threshold": 0.85,
+    "near_duplicate_method": "jaccard_trigram"
+  },
+  "sampling": {
+    "max_records_per_source_cluster": 0.25,
+    "min_records_per_stratification_cell": 1,
+    "resample_on_hard_fail": true,
+    "max_resample_attempts": 5
+  }
+}

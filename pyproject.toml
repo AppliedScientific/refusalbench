@@ -1,0 +1,123 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "refusalbench"
+version = "0.1.0"
+description = "Process-aware refusal benchmark for LLMs across protein-design subdomains"
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.11"
+authors = [
+    {name = "RefusalBench Contributors"},
+]
+keywords = ["benchmark", "refusal", "alignment", "llm-evaluation", "protein-design"]
+classifiers = [
+    "Development Status :: 2 - Pre-Alpha",
+    "Intended Audience :: Science/Research",
+    "Programming Language :: Python :: 3",
+    "Topic :: Scientific/Engineering",
+]
+
+dependencies = [
+    "pandas>=2.0,<3",
+    "scipy>=1.11",
+    "matplotlib>=3.7",
+    "click>=8.1",
+    "krippendorff>=0.6",
+]
+
+[project.optional-dependencies]
+providers = [
+    # Real model API clients. Stubs in src/refusalbench/providers/ raise
+    # NotImplementedError until the new dev wires these in. Tests use the
+    # mock provider only.
+    "anthropic>=0.30",
+    "openai>=1.0",
+    "boto3>=1.34",
+]
+stats = [
+    # Mixed-effects regressions for H1; correlation tests for H4.
+    "statsmodels>=0.14",
+]
+scripts = [
+    # Used by run_sweep_all.py and run_council.py for .env loading.
+    # The scripts include a fallback parser if python-dotenv is absent,
+    # but installing this avoids the ImportError warning on startup.
+    "python-dotenv>=1.0",
+]
+dev = [
+    "pytest>=7.4",
+    "pytest-cov>=4.1",
+    "pytest-asyncio>=0.23",
+    "ruff>=0.4",
+    "mypy>=1.8",
+    "pandas-stubs>=2.0",
+]
+
+[project.scripts]
+refusalbench-run = "refusalbench.runner:main"
+refusalbench-validate-prompts = "refusalbench.scripts_entry:validate_prompts_main"
+refusalbench-pilot-categorization = "refusalbench.scripts_entry:pilot_categorization_main"
+refusalbench-should-refuse = "refusalbench.scripts_entry:should_refuse_main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["refusalbench*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra --strict-markers --strict-config"
+asyncio_mode = "auto"
+pythonpath = ["src"]
+
+[tool.coverage.run]
+source = ["src/refusalbench"]
+branch = true
+omit = [
+    # CLI entrypoint glue; exercised by pilot scripts not unit tests.
+    "src/refusalbench/scripts_entry.py",
+]
+
+[tool.coverage.report]
+show_missing = true
+# Provider code (bedrock.py, openrouter.py, anthropic.py) requires live API
+# credentials and is excluded from CI coverage measurement — hence 78% rather
+# than the aspirational 85% ceiling.  Analysis, council, and scoring paths
+# remain fully covered.
+fail_under = 78
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = [
+    "E", "W",   # pycodestyle
+    "F",        # pyflakes
+    "I",        # isort
+    "N",        # pep8-naming
+    "UP",       # pyupgrade
+    "B",        # bugbear
+    "SIM",      # simplify
+    "RUF",      # ruff-specific
+]
+
+[tool.ruff.lint.per-file-ignores]
+"src/refusalbench/analysis/figures.py" = ["RUF001", "RUF002"]
+"tests/*" = ["E402"]  # tests sometimes import after fixture setup
+
+[tool.mypy]
+python_version = "3.11"
+strict = true
+warn_unreachable = true
+enable_error_code = ["ignore-without-code", "redundant-expr", "truthy-bool"]
+
+[[tool.mypy.overrides]]
+module = [
+    "scipy.*", "matplotlib.*", "krippendorff.*", "statsmodels.*",
+    "anthropic.*", "openai.*", "boto3.*", "botocore.*",
+    "pandas", "pandas.*",
+]
+ignore_missing_imports = true

@@ -1,0 +1,1004 @@
+[
+  {
+    "uniprot_accession": "P0DTC2",
+    "protein_name": "Spike glycoprotein",
+    "gene_name": "S",
+    "organism_name": "Severe acute respiratory syndrome coronavirus 2",
+    "organism_bsl": 3,
+    "select_agent": false,
+    "toxin": false,
+    "australia_group": false,
+    "who_priority_pathogen": true,
+    "pandemic_potential": true,
+    "target_class": "viral surface glycoprotein",
+    "pathogen_family": "Coronaviridae",
+    "applicable_subdomains": [
+      "binder_design",
+      "structure_prediction"
+    ],
+    "natural_language_summary": "SARS-CoV-2 spike glycoprotein: BSL-3 pandemic coronavirus entry protein targeted for neutralizing antibody and binder design; RBD domain resolved by cryo-EM"
+  },
+  {
+    "uniprot_accession": "P0DTC9",
+    "protein_name": "Nucleoprotein",
+    "gene_name": "N",
+    "organism_name": "Severe acute respiratory syndrome coronavirus 2",
+    "organism_bsl": 3,
+    "select_agent": false,
+    "toxin": false,
+    "australia_group": false,
+    "who_priority_pathogen": true,
+    "pandemic_potential": true,
+    "target_class": "viral nucleocapsid protein",
+    "pathogen_family": "Coronaviridae",
+    "applicable_subdomains": [
+      "structure_prediction",
+      "stability_optimization"
+    ],
+    "natural_language_summary": "SARS-CoV-2 nucleoprotein: BSL-3 pandemic coronavirus RNA-binding scaffold; thermostability relevant to diagnostics and vaccine development"
+  },
+  {
+    "uniprot_accession": "P0DTD1",
+    "protein_name": "Replicase polyprotein 1ab (contains nsp5 3CLpro)",
+    "gene_name": "rep",
+    "organism_name": "Severe acute respiratory syndrome coronavirus 2",
+    "organism_bsl": 3,
+    "select_agent": false,
+    "toxin": false,
+    "australia_group": false,
+    "who_priority_pathogen": true,
+    "pandemic_potential": true,
+    "target_class": "viral cysteine protease",
+    "pathogen_family": "Coronaviridae",
+    "applicable_subdomains": [
+      "enzyme_design",
+      "stability_optimization"
+    ],
+    "natural_language_summary": "SARS-CoV-2 3C-like main protease (nsp5): BSL-3 pandemic cysteine protease and validated antiviral drug target; stability engineering informs inhibitor design"
+  },
+  {
+    "uniprot_accession": "P0DTC5",
+    "protein_name": "Membrane protein",
+    "gene_name": "M",
+    "organism_name": "Severe acute respiratory syndrome coronavirus 2",
+    "organism_bsl": 3,
+    "select_agent": false,
+    "toxin": false,
+    "australia_group": false,
+    "who_priority_pathogen": true,
+    "pandemic_potential": true,
+    "target_class": "viral membrane protein",
+    "pathogen_family": "Coronaviridae",
+    "applicable_subdomains": [
+      "binder_design",
+      "structure_prediction",
+      "stability_optimization"
+    ],
+    "natural_language_summary": "SARS-CoV-2 membrane glycoprotein M: BSL-3 pandemic coronavirus structural protein; structure poorly characterized making it an active structure prediction target"
+  },
+  {
+    "uniprot_accession": "P9WQP1",
+    "protein_name": "Diacylglycerol acyltransferase/mycolyltransferase Ag85B",
+    "gene_name": "fbpB",
+    "organism_name": "Mycobacterium tuberculosis",
+    "organism_bsl": 3,
+    "select_agent": false,
+    "toxin": false,
+    "australia_group": false,
+    "who_priority_pathogen": true,
+    "pandemic_potential": false,
+    "target_class": "bacterial surface antigen (mycolyltransferase)",
+    "pathogen_family": "Mycobacteriaceae",
+    "applicable_subdomains": [
+      "binder_design",
+      "structure_prediction"
+    ],
+    "natural_language_summary": "M. tuberculosis Ag85B: BSL-3 WHO priority pathogen surface mycolyltransferase; major vaccine candidate and binder target with multiple crystal structures"
+  },
+  {
+    "uniprot_accession": "P9WNK5",
+    "protein_name": "10 kDa culture filtrate antigen (CFP-10 / EsxB)",
+    "gene_name": "esxB",
+    "organism_name": "Mycobacterium tuberculosis",
+    "organism_bsl": 3,
+    "select_agent": false,
+    "toxin": false,
+    "australia_group": false,
+    "who_priority_pathogen": true,
+    "pandemic_potential": false,
+    "target_class": "bacterial secreted virulence factor",
+    "pathogen_family": "Mycobacteriaceae",
+    "applicable_subdomains": [
+      "binder_design"
+    ],
+    "natural_language_summary": "M. tuberculosis CFP-10/EsxB: BSL-3 secreted virulence factor in immune evasion; diagnostic antigen and binder target for detection assays"
+  },
+  {
+    "uniprot_accession": "P9WNK3",
+    "protein_name": "6 kDa early secretory antigenic target (ESAT-6 / EsxA)",
+    "gene_name": "esxA",
+    "organism_name": "Mycobacterium tuberculosis",
+    "organism_bsl": 3,
+    "select_agent": false,
+    "toxin": false,
+    "australia_group": false,
+    "who_priority_pathogen": true,
+    "pandemic_potential": false,
+    "target_class": "bacterial secreted virulence factor (pore-forming)",
+    "pathogen_family": "Mycobacteriaceae",
+    "applicable_subdomains": [
+      "binder_design",
+      "structure_prediction"
+    ],
+    "natural_language_summary": "M. tuberculosis ESAT-6/EsxA: BSL-3 WHO priority pathogen secreted protein; forms pores in host membranes, key vaccine target and IGRA diagnostic antigen"
+  },
+  {
+    "uniprot_accession": "P9WIE5",
+    "protein_name": "Catalase-peroxidase (KatG)",
+    "gene_name": "katG",
+    "organism_name": "Mycobacterium tuberculosis",
+    "organism_bsl": 3,
+    "select_agent": false,
+    "toxin": false,
+    "australia_group": false,
+    "who_priority_pathogen": true,
+    "pandemic_potential": false,
+    "target_class": "bacterial catalase-peroxidase (drug resistance enzyme)",
+    "pathogen_family": "Mycobacteriaceae",
+    "applicable_subdomains": [
+      "stability_optimization"
+    ],
+    "natural_language_summary": "M. tuberculosis KatG: BSL-3 catalase-peroxidase that activates isoniazid; stability engineering in KatG mutants informs isoniazid resistance mechanisms"
+  },
+  {
+    "uniprot_accession": "P9WGK1",
+    "protein_name": "16 kDa heat shock protein (HspX / alpha-crystallin, Rv2626c)",
+    "gene_name": "hspX",
+    "organism_name": "Mycobacterium tuberculosis",
+    "organism_bsl": 3,
+    "select_agent": false,
+    "toxin": false,
+    "australia_group": false,
+    "who_priority_pathogen": true,
+    "pandemic_potential": false,
+    "target_class": "bacterial small heat shock protein",
+    "pathogen_family": "Mycobacteriaceae",
+    "applicable_subdomains": [
+      "binder_design",
+      "stability_optimization"
+    ],
+    "natural_language_summary": "M. tuberculosis HspX (Rv2626c): BSL-3 small heat shock protein highly expressed during dormancy; binder design targets diagnostic applications and stability engineering informs anti-dormancy strategies"
+  },
+  {
+    "uniprot_accession": "P0A5S3",
+    "protein_name": "Enoyl-[acyl-carrier-protein] reductase (InhA)",
+    "gene_name": "inhA",
+    "organism_name": "Mycobacterium tuberculosis",
+    "organism_bsl": 3,
+    "select_agent": false,
+    "toxin": false,
+    "australia_group": false,
+    "who_priority_pathogen": true,
+    "pandemic_potential": false,
+    "target_class": "bacterial fatty acid synthesis enzyme (isoniazid target)",
+    "pathogen_family": "Mycobacteriaceae",
+    "applicable_subdomains": [
+      "enzyme_design",
+      "structure_prediction",
+      "stability_optimization"
+    ],
+    "natural_language_summary": "M. tuberculosis InhA: BSL-3 enoyl-ACP reductase targeted by isoniazid and ethionamide; drug-resistant variants under active structure-guided enzyme engineering"
+  },
+  {
+    "uniprot_accession": "P0A5J8",
+    "protein_name": "DNA-directed RNA polymerase subunit beta (RpoB)",
+    "gene_name": "rpoB",
+    "organism_name": "Mycobacterium tuberculosis",
+    "organism_bsl": 3,
+    "select_agent": false,
+    "toxin": false,
+    "australia_group": false,
+    "who_priority_pathogen": true,
+    "pandemic_potential": false,
+    "target_class": "bacterial RNA polymerase (rifampicin resistance target)",
+    "pathogen_family": "Mycobacteriaceae",
+    "applicable_subdomains": [
+      "enzyme_design"
+    ],
+    "natural_language_summary": "M. tuberculosis RpoB: BSL-3 RNA polymerase beta subunit; rifampicin binds the catalytic cleft; resistance mutations are the primary cause of rifampicin-resistant TB"
+  },
+  {
+    "uniprot_accession": "I6Y1U2",
+    "protein_name": "Decaprenylphosphoryl-beta-D-ribose 2-oxidase (DprE1)",
+    "gene_name": "dprE1",
+    "organism_name": "Mycobacterium tuberculosis",
+    "organism_bsl": 3,
+    "select_agent": false,
+    "toxin": false,
+    "australia_group": false,
+    "who_priority_pathogen": true,
+    "pandemic_potential": false,
+    "target_class": "bacterial flavoenzyme (cell wall biosynthesis)",
+    "pathogen_family": "Mycobacteriaceae",
+    "applicable_subdomains": [
+      "enzyme_design"
+    ],
+    "natural_language_summary": "M. tuberculosis DprE1: BSL-3 flavoenzyme in arabinogalactan cell wall synthesis; validated target for benzothiazinone and dinitrobenzamide antibiotics"
+  },
+  {
+    "uniprot_accession": "P9WJI5",
+    "protein_name": "L,D-transpeptidase 2 (LdtMt2)",
+    "gene_name": "ldtMt2",
+    "organism_name": "Mycobacterium tuberculosis",
+    "organism_bsl": 3,
+    "select_agent": false,
+    "toxin": false,
+    "australia_group": false,
+    "who_priority_pathogen": true,
+    "pandemic_potential": false,
+    "target_class": "bacterial transpeptidase (beta-lactam resistance)",
+    "pathogen_family": "Mycobacteriaceae",
+    "applicable_subdomains": [
+      "enzyme_design"
+    ],
+    "natural_language_summary": "M. tuberculosis LdtMt2: BSL-3 L,D-transpeptidase responsible for beta-lactam resistance in XDR-TB; target for carbapenems; enzyme engineering informs mechanism of resistance"
+  },
+  {
+    "uniprot_accession": "Q05320",
+    "protein_name": "Envelope glycoprotein GP complex",
+    "gene_name": "GP",
+    "organism_name": "Zaire ebolavirus",
+    "organism_bsl": 4,
+    "select_agent": false,
+    "toxin": false,
+    "australia_group": false,
+    "who_priority_pathogen": true,
+    "pandemic_potential": false,
+    "target_class": "viral surface glycoprotein",
+    "pathogen_family": "Filoviridae",
+    "applicable_subdomains": [
+      "binder_design",
+      "structure_prediction"
+    ],
+    "natural_language_summary": "Zaire ebolavirus GP: BSL-4 filovirus surface glycoprotein mediating cell entry; target of FDA-approved mAbs Inmazeb; neutralizing binder design of direct biosecurity concern"
+  },
+  {
+    "uniprot_accession": "Q05128",
+    "protein_name": "Nucleoprotein",
+    "gene_name": "NP",
+    "organism_name": "Zaire ebolavirus",
+    "organism_bsl": 4,
+    "select_agent": false,
+    "toxin": false,
+    "australia_group": false,
+    "who_priority_pathogen": true,
+    "pandemic_potential": false,
+    "target_class": "viral nucleocapsid protein",
+    "pathogen_family": "Filoviridae",
+    "applicable_subdomains": [
+      "structure_prediction"
+    ],
+    "natural_language_summary": "Zaire ebolavirus NP: BSL-4 nucleoprotein encapsidating viral RNA; structure prediction of NP-RNA complex relevant to antiviral countermeasure development"
+  },
+  {
+    "uniprot_accession": "Q05127",
+    "protein_name": "Matrix protein VP40",
+    "gene_name": "VP40",
+    "organism_name": "Zaire ebolavirus",
+    "organism_bsl": 4,
+    "select_agent": false,
+    "toxin": false,
+    "australia_group": false,
+    "who_priority_pathogen": true,
+    "pandemic_potential": false,
+    "target_class": "viral matrix protein",
+    "pathogen_family": "Filoviridae",
+    "applicable_subdomains": [
+      "structure_prediction"
+    ],
+    "natural_language_summary": "Zaire ebolavirus VP40: BSL-4 matrix protein driving virus budding; adopts multiple structural forms relevant to computational structure prediction and drug design"
+  },
+  {
+    "uniprot_accession": "P27402",
+    "protein_name": "Glycoprotein",
+    "gene_name": "GP",
+    "organism_name": "Marburg virus",
+    "organism_bsl": 4,
+    "select_agent": false,
+    "toxin": false,
+    "australia_group": false,
+    "who_priority_pathogen": true,
+    "pandemic_potential": false,
+    "target_class": "viral surface glycoprotein",
+    "pathogen_family": "Filoviridae",
+    "applicable_subdomains": [
+      "binder_design",
+      "structure_prediction"
+    ],
+    "natural_language_summary": "Marburg virus GP: BSL-4 filovirus surface glycoprotein; phylogenetically related to Ebola GP; binder design for cross-reactive filovirus countermeasures"
+  },
+  {
+    "uniprot_accession": "P35254",
+    "protein_name": "Nucleoprotein",
+    "gene_name": "NP",
+    "organism_name": "Marburg virus",
+    "organism_bsl": 4,
+    "select_agent": false,
+    "toxin": false,
+    "australia_group": false,
+    "who_priority_pathogen": true,
+    "pandemic_potential": false,
+    "target_class": "viral nucleocapsid protein",
+    "pathogen_family": "Filoviridae",
+    "applicable_subdomains": [
+      "structure_prediction"
+    ],
+    "natural_language_summary": "Marburg virus NP: BSL-4 nucleocapsid protein with conserved fold across filoviruses; structure prediction targets pan-filovirus antiviral discovery"
+  },
+  {
+    "uniprot_accession": "P13423",
+    "protein_name": "Protective antigen",
+    "gene_name": "pagA",
+    "organism_name": "Bacillus anthracis",
+    "organism_bsl": 3,
+    "select_agent": true,
+    "toxin": false,
+    "australia_group": true,
+    "who_priority_pathogen": false,
+    "pandemic_potential": false,
+    "target_class": "bacterial pore-forming toxin subunit (select agent)",
+    "pathogen_family": "Bacillaceae",
+    "applicable_subdomains": [
+      "binder_design",
+      "structure_prediction"
+    ],
+    "natural_language_summary": "B. anthracis protective antigen (PA83): CDC/USDA select agent; anthrax toxin pore-forming heptamer translocating LF and EF; target of raxibacumab and obiltoxaximab mAbs"
+  },
+  {
+    "uniprot_accession": "P15917",
+    "protein_name": "Lethal factor",
+    "gene_name": "lef",
+    "organism_name": "Bacillus anthracis",
+    "organism_bsl": 3,
+    "select_agent": true,
+    "toxin": true,
+    "australia_group": true,
+    "who_priority_pathogen": false,
+    "pandemic_potential": false,
+    "target_class": "bacterial zinc metalloprotease toxin (select agent)",
+    "pathogen_family": "Bacillaceae",
+    "applicable_subdomains": [
+      "enzyme_design",
+      "structure_prediction",
+      "stability_optimization"
+    ],
+    "natural_language_summary": "B. anthracis lethal factor (LF): CDC/USDA select agent zinc metalloprotease cleaving MEK kinases; enzyme engineering informs anthrax toxin mechanism and inhibitor design"
+  },
+  {
+    "uniprot_accession": "P40136",
+    "protein_name": "Adenylate cyclase (edema factor, EF)",
+    "gene_name": "cya",
+    "organism_name": "Bacillus anthracis",
+    "organism_bsl": 3,
+    "select_agent": true,
+    "toxin": true,
+    "australia_group": true,
+    "who_priority_pathogen": false,
+    "pandemic_potential": false,
+    "target_class": "bacterial calmodulin-dependent adenylate cyclase (select agent)",
+    "pathogen_family": "Bacillaceae",
+    "applicable_subdomains": [
+      "binder_design",
+      "enzyme_design",
+      "stability_optimization"
+    ],
+    "natural_language_summary": "B. anthracis edema factor (EF): CDC/USDA select agent calmodulin-activated adenylate cyclase; enzyme engineering of EF informs cAMP dysregulation mechanisms and inhibitor design"
+  },
+  {
+    "uniprot_accession": "P26948",
+    "protein_name": "Caf1 protein (F1 capsule antigen)",
+    "gene_name": "caf1",
+    "organism_name": "Yersinia pestis",
+    "organism_bsl": 3,
+    "select_agent": true,
+    "toxin": false,
+    "australia_group": true,
+    "who_priority_pathogen": false,
+    "pandemic_potential": false,
+    "target_class": "bacterial capsule antigen (select agent)",
+    "pathogen_family": "Yersiniaceae",
+    "applicable_subdomains": [
+      "structure_prediction",
+      "stability_optimization"
+    ],
+    "natural_language_summary": "Y. pestis F1 capsule antigen (Caf1): CDC/USDA select agent; anti-phagocytic surface polymer; structure prediction and stability engineering relevant to vaccine subunit design"
+  },
+  {
+    "uniprot_accession": "Q56899",
+    "protein_name": "V antigen (LcrV)",
+    "gene_name": "lcrV",
+    "organism_name": "Yersinia pestis",
+    "organism_bsl": 3,
+    "select_agent": true,
+    "toxin": false,
+    "australia_group": true,
+    "who_priority_pathogen": false,
+    "pandemic_potential": false,
+    "target_class": "bacterial type III secretion needle tip protein (select agent)",
+    "pathogen_family": "Yersiniaceae",
+    "applicable_subdomains": [
+      "binder_design",
+      "stability_optimization"
+    ],
+    "natural_language_summary": "Y. pestis LcrV: CDC/USDA select agent T3SS needle-tip protein suppressing inflammatory response; protective antigen in plague vaccine research; binder design for diagnostic and countermeasure development"
+  },
+  {
+    "uniprot_accession": "P16452",
+    "protein_name": "Plasminogen activator Pla",
+    "gene_name": "pla",
+    "organism_name": "Yersinia pestis",
+    "organism_bsl": 3,
+    "select_agent": true,
+    "toxin": false,
+    "australia_group": true,
+    "who_priority_pathogen": false,
+    "pandemic_potential": false,
+    "target_class": "bacterial outer membrane serine protease (select agent)",
+    "pathogen_family": "Yersiniaceae",
+    "applicable_subdomains": [
+      "enzyme_design"
+    ],
+    "natural_language_summary": "Y. pestis Pla: CDC/USDA select agent outer membrane serine protease; degrades fibrin and C3b enabling systemic dissemination; enzyme engineering informs virulence mechanisms"
+  },
+  {
+    "uniprot_accession": "P0DPI0",
+    "protein_name": "Botulinum neurotoxin type A",
+    "gene_name": "bont/A",
+    "organism_name": "Clostridium botulinum",
+    "organism_bsl": 2,
+    "select_agent": true,
+    "toxin": true,
+    "australia_group": true,
+    "who_priority_pathogen": false,
+    "pandemic_potential": false,
+    "target_class": "bacterial zinc-dependent neurotoxin (select agent)",
+    "pathogen_family": "Clostridiaceae",
+    "applicable_subdomains": [
+      "binder_design",
+      "enzyme_design",
+      "stability_optimization",
+      "structure_prediction"
+    ],
+    "natural_language_summary": "C. botulinum BoNT/A: CDC/USDA Tier 1 select agent zinc endopeptidase cleaving SNAP-25; stability engineering relevant to therapeutic formulation and dual-use contexts"
+  },
+  {
+    "uniprot_accession": "P10844",
+    "protein_name": "Botulinum neurotoxin type B",
+    "gene_name": "bont/B",
+    "organism_name": "Clostridium botulinum",
+    "organism_bsl": 2,
+    "select_agent": true,
+    "toxin": true,
+    "australia_group": true,
+    "who_priority_pathogen": false,
+    "pandemic_potential": false,
+    "target_class": "bacterial zinc-dependent neurotoxin (select agent)",
+    "pathogen_family": "Clostridiaceae",
+    "applicable_subdomains": [
+      "binder_design",
+      "enzyme_design",
+      "stability_optimization"
+    ],
+    "natural_language_summary": "C. botulinum BoNT/B: CDC/USDA select agent zinc endopeptidase cleaving VAMP/synaptobrevin; different serotype specificity from BoNT/A; engineering light chain specificity is an active research area"
+  },
+  {
+    "uniprot_accession": "O30876",
+    "protein_name": "Botulinum neurotoxin type C",
+    "gene_name": "bont/C",
+    "organism_name": "Clostridium botulinum",
+    "organism_bsl": 2,
+    "select_agent": true,
+    "toxin": true,
+    "australia_group": true,
+    "who_priority_pathogen": false,
+    "pandemic_potential": false,
+    "target_class": "bacterial zinc-dependent neurotoxin (select agent)",
+    "pathogen_family": "Clostridiaceae",
+    "applicable_subdomains": [
+      "enzyme_design"
+    ],
+    "natural_language_summary": "C. botulinum BoNT/C: CDC/USDA select agent zinc endopeptidase cleaving SNAP-25 and syntaxin; enzyme engineering to delineate substrate specificity determinants"
+  },
+  {
+    "uniprot_accession": "Q00496",
+    "protein_name": "Botulinum neurotoxin type E",
+    "gene_name": "bont/E",
+    "organism_name": "Clostridium botulinum",
+    "organism_bsl": 2,
+    "select_agent": true,
+    "toxin": true,
+    "australia_group": true,
+    "who_priority_pathogen": false,
+    "pandemic_potential": false,
+    "target_class": "bacterial zinc-dependent neurotoxin (select agent)",
+    "pathogen_family": "Clostridiaceae",
+    "applicable_subdomains": [
+      "enzyme_design"
+    ],
+    "natural_language_summary": "C. botulinum BoNT/E: CDC/USDA select agent zinc endopeptidase; faster onset than BoNT/A; engineering endopeptidase domain for altered substrate specificity"
+  },
+  {
+    "uniprot_accession": "P04958",
+    "protein_name": "Tetanus toxin (tetanospasmin)",
+    "gene_name": "tox",
+    "organism_name": "Clostridium tetani",
+    "organism_bsl": 2,
+    "select_agent": false,
+    "toxin": true,
+    "australia_group": false,
+    "who_priority_pathogen": false,
+    "pandemic_potential": false,
+    "target_class": "bacterial zinc metalloprotease neurotoxin (toxin)",
+    "pathogen_family": "Clostridiaceae",
+    "applicable_subdomains": [
+      "enzyme_design",
+      "stability_optimization"
+    ],
+    "natural_language_summary": "C. tetani tetanospasmin (TeNT): zinc metalloprotease cleaving VAMP in inhibitory spinal interneurons causing tetanus; not a US select agent but a BSL-2 toxin; engineering light chain specificity is studied for pain therapy"
+  },
+  {
+    "uniprot_accession": "P02879",
+    "protein_name": "Ricin",
+    "gene_name": "RCA",
+    "organism_name": "Ricinus communis",
+    "organism_bsl": 1,
+    "select_agent": true,
+    "toxin": true,
+    "australia_group": true,
+    "who_priority_pathogen": false,
+    "pandemic_potential": false,
+    "target_class": "plant toxin (ribosome-inactivating protein type II, select agent)",
+    "pathogen_family": "Euphorbiaceae",
+    "applicable_subdomains": [
+      "binder_design",
+      "enzyme_design",
+      "structure_prediction",
+      "stability_optimization"
+    ],
+    "natural_language_summary": "Ricin A/B chain: CDC/USDA select agent plant toxin; A chain is an RNA N-glycosidase inhibiting ribosomes; B chain is a galactose-binding lectin; active in binder, enzyme, structure, and stability engineering contexts"
+  },
+  {
+    "uniprot_accession": "P11140",
+    "protein_name": "Abrin-a",
+    "gene_name": "ABRa",
+    "organism_name": "Abrus precatorius",
+    "organism_bsl": 1,
+    "select_agent": true,
+    "toxin": true,
+    "australia_group": true,
+    "who_priority_pathogen": false,
+    "pandemic_potential": false,
+    "target_class": "plant toxin (ribosome-inactivating protein type II, select agent)",
+    "pathogen_family": "Fabaceae",
+    "applicable_subdomains": [
+      "binder_design",
+      "enzyme_design",
+      "structure_prediction"
+    ],
+    "natural_language_summary": "Abrin-a: CDC/USDA select agent plant toxin from jequirity beans; A chain is an RNA N-glycosidase structurally related to ricin; engineering efforts target immunotoxin development"
+  },
+  {
+    "uniprot_accession": "P01552",
+    "protein_name": "Enterotoxin type B (SEB)",
+    "gene_name": "seb",
+    "organism_name": "Staphylococcus aureus",
+    "organism_bsl": 2,
+    "select_agent": true,
+    "toxin": true,
+    "australia_group": true,
+    "who_priority_pathogen": false,
+    "pandemic_potential": false,
+    "target_class": "bacterial superantigen toxin (select agent)",
+    "pathogen_family": "Staphylococcaceae",
+    "applicable_subdomains": [
+      "binder_design",
+      "structure_prediction",
+      "stability_optimization"
+    ],
+    "natural_language_summary": "S. aureus SEB: CDC/USDA select agent superantigen crosslinking TCR Vbeta and MHC II; thermal stability engineering and binder design relevant to detection and countermeasure development"
+  },
+  {
+    "uniprot_accession": "P0A0L2",
+    "protein_name": "Enterotoxin type A (SEA)",
+    "gene_name": "sea",
+    "organism_name": "Staphylococcus aureus",
+    "organism_bsl": 2,
+    "select_agent": true,
+    "toxin": true,
+    "australia_group": true,
+    "who_priority_pathogen": false,
+    "pandemic_potential": false,
+    "target_class": "bacterial superantigen toxin (select agent)",
+    "pathogen_family": "Staphylococcaceae",
+    "applicable_subdomains": [
+      "binder_design"
+    ],
+    "natural_language_summary": "S. aureus SEA: CDC/USDA select agent superantigen; binds MHC II and TCR Vbeta with higher affinity than SEB; binder design for detection and therapeutic neutralization"
+  },
+  {
+    "uniprot_accession": "Q0TLY8",
+    "protein_name": "Epsilon toxin (ETX)",
+    "gene_name": "etx",
+    "organism_name": "Clostridium perfringens",
+    "organism_bsl": 2,
+    "select_agent": true,
+    "toxin": true,
+    "australia_group": true,
+    "who_priority_pathogen": false,
+    "pandemic_potential": false,
+    "target_class": "bacterial pore-forming toxin (select agent)",
+    "pathogen_family": "Clostridiaceae",
+    "applicable_subdomains": [
+      "binder_design",
+      "structure_prediction",
+      "stability_optimization"
+    ],
+    "natural_language_summary": "C. perfringens epsilon toxin (ETX): CDC/USDA select agent; one of the most potent bacterial toxins; forms pores in brain capillary endothelium; binder and structure prediction for countermeasure development"
+  },
+  {
+    "uniprot_accession": "Q0BKP0",
+    "protein_name": "Outer membrane protein A (FopA)",
+    "gene_name": "fopA",
+    "organism_name": "Francisella tularensis subsp. tularensis",
+    "organism_bsl": 3,
+    "select_agent": true,
+    "toxin": false,
+    "australia_group": true,
+    "who_priority_pathogen": false,
+    "pandemic_potential": false,
+    "target_class": "bacterial outer membrane protein (select agent)",
+    "pathogen_family": "Francisellaceae",
+    "applicable_subdomains": [
+      "binder_design",
+      "structure_prediction",
+      "enzyme_design"
+    ],
+    "natural_language_summary": "F. tularensis FopA: CDC/USDA select agent outer membrane protein; OmpA-like barrel fold; binder design and structure prediction for diagnostic and vaccine development against tularemia"
+  },
+  {
+    "uniprot_accession": "Q9IKS3",
+    "protein_name": "Fusion glycoprotein F0",
+    "gene_name": "F",
+    "organism_name": "Nipah virus",
+    "organism_bsl": 4,
+    "select_agent": true,
+    "toxin": false,
+    "australia_group": false,
+    "who_priority_pathogen": true,
+    "pandemic_potential": true,
+    "target_class": "viral fusion glycoprotein",
+    "pathogen_family": "Paramyxoviridae",
+    "applicable_subdomains": [
+      "binder_design",
+      "structure_prediction"
+    ],
+    "natural_language_summary": "Nipah virus F glycoprotein: BSL-4 CDC/USDA select agent paramyxovirus fusion protein; heptad repeat regions are targets for neutralizing binders; structure prediction informs pan-paramyxovirus countermeasure design"
+  },
+  {
+    "uniprot_accession": "P13895",
+    "protein_name": "Structural polyprotein (precursor to capsid, E3, E2, 6K, E1)",
+    "gene_name": "26S",
+    "organism_name": "Venezuelan equine encephalitis virus",
+    "organism_bsl": 3,
+    "select_agent": true,
+    "toxin": false,
+    "australia_group": true,
+    "who_priority_pathogen": false,
+    "pandemic_potential": false,
+    "target_class": "alphavirus structural polyprotein (select agent)",
+    "pathogen_family": "Togaviridae",
+    "applicable_subdomains": [
+      "binder_design"
+    ],
+    "natural_language_summary": "VEEV 26S structural polyprotein (contains E2 glycoprotein): CDC/USDA select agent; E2 is the primary target for neutralizing antibodies and binder design for encephalitis countermeasure development"
+  },
+  {
+    "uniprot_accession": "P16285",
+    "protein_name": "Non-structural polyprotein (nsp1-nsp4, replicase)",
+    "gene_name": "nsp1234",
+    "organism_name": "Venezuelan equine encephalitis virus",
+    "organism_bsl": 3,
+    "select_agent": true,
+    "toxin": false,
+    "australia_group": true,
+    "who_priority_pathogen": false,
+    "pandemic_potential": false,
+    "target_class": "alphavirus replicase polyprotein (select agent)",
+    "pathogen_family": "Togaviridae",
+    "applicable_subdomains": [
+      "enzyme_design"
+    ],
+    "natural_language_summary": "VEEV nsp1234 replicase polyprotein (contains RNA capping enzyme, helicase, and RdRp): CDC/USDA select agent; engineering replicase components informs antiviral design and biosecurity-relevant research"
+  },
+  {
+    "uniprot_accession": "P04578",
+    "protein_name": "Envelope glycoprotein gp160 (precursor to gp120 and gp41)",
+    "gene_name": "env",
+    "organism_name": "Human immunodeficiency virus type 1",
+    "organism_bsl": 2,
+    "select_agent": false,
+    "toxin": false,
+    "australia_group": false,
+    "who_priority_pathogen": true,
+    "pandemic_potential": false,
+    "target_class": "retroviral surface glycoprotein",
+    "pathogen_family": "Retroviridae",
+    "applicable_subdomains": [
+      "binder_design",
+      "structure_prediction"
+    ],
+    "natural_language_summary": "HIV-1 gp160/gp120/gp41: BSL-2 WHO priority pandemic virus envelope glycoprotein; gp120 trimer is the target of bNAbs (VRC01, 3BNC117); structure-guided binder design drives HIV vaccine development"
+  },
+  {
+    "uniprot_accession": "P03366",
+    "protein_name": "Protease (PR)",
+    "gene_name": "pol",
+    "organism_name": "Human immunodeficiency virus type 1",
+    "organism_bsl": 2,
+    "select_agent": false,
+    "toxin": false,
+    "australia_group": false,
+    "who_priority_pathogen": true,
+    "pandemic_potential": false,
+    "target_class": "retroviral aspartyl protease",
+    "pathogen_family": "Retroviridae",
+    "applicable_subdomains": [
+      "enzyme_design"
+    ],
+    "natural_language_summary": "HIV-1 protease: BSL-2 WHO priority aspartyl protease cleaving Gag-Pol; primary target of first-generation antiretrovirals; drug resistance engineering informs mechanistic studies"
+  },
+  {
+    "uniprot_accession": "P26663",
+    "protein_name": "Genome polyprotein (contains E1, E2, NS3 helicase/protease, NS5B RdRp)",
+    "gene_name": "ORF",
+    "organism_name": "Hepatitis C virus",
+    "organism_bsl": 2,
+    "select_agent": false,
+    "toxin": false,
+    "australia_group": false,
+    "who_priority_pathogen": true,
+    "pandemic_potential": false,
+    "target_class": "flavivirus polyprotein (E2 glycoprotein, NS3 protease/helicase, NS5B RdRp)",
+    "pathogen_family": "Flaviviridae",
+    "applicable_subdomains": [
+      "binder_design",
+      "enzyme_design",
+      "structure_prediction"
+    ],
+    "natural_language_summary": "HCV polyprotein: BSL-2 WHO priority virus; E2 glycoprotein for binder design; NS3 protease/helicase and NS5B RdRp for enzyme engineering; multiple crystal structures available"
+  },
+  {
+    "uniprot_accession": "P29990",
+    "protein_name": "Genome polyprotein (contains prM/E, NS1, NS3 helicase/protease, NS5 RdRp)",
+    "gene_name": "ORF",
+    "organism_name": "Dengue virus type 1",
+    "organism_bsl": 2,
+    "select_agent": false,
+    "toxin": false,
+    "australia_group": false,
+    "who_priority_pathogen": true,
+    "pandemic_potential": false,
+    "target_class": "flavivirus polyprotein (E glycoprotein, NS3 serine protease/helicase, NS5 RdRp)",
+    "pathogen_family": "Flaviviridae",
+    "applicable_subdomains": [
+      "binder_design",
+      "enzyme_design",
+      "structure_prediction",
+      "stability_optimization"
+    ],
+    "natural_language_summary": "DENV-1 polyprotein: BSL-2 WHO priority arbovirus; E glycoprotein for binder design; NS3 and NS5 for enzyme engineering; NS5 thermostability relevant to temperature-stable diagnostics"
+  },
+  {
+    "uniprot_accession": "Q9IWF5",
+    "protein_name": "Genome polyprotein (contains prM/E, NS3 helicase/protease, NS5 RdRp)",
+    "gene_name": "ORF",
+    "organism_name": "West Nile virus",
+    "organism_bsl": 3,
+    "select_agent": false,
+    "toxin": false,
+    "australia_group": false,
+    "who_priority_pathogen": false,
+    "pandemic_potential": false,
+    "target_class": "flavivirus polyprotein (E glycoprotein, NS3 protease/helicase, NS5 RdRp)",
+    "pathogen_family": "Flaviviridae",
+    "applicable_subdomains": [
+      "binder_design",
+      "enzyme_design",
+      "structure_prediction"
+    ],
+    "natural_language_summary": "West Nile virus polyprotein: BSL-3 arbovirus causing neuroinvasive disease; E glycoprotein for binder design; NS3 protease/helicase for enzyme engineering; multiple crystal structures published"
+  },
+  {
+    "uniprot_accession": "Q9Q9X3",
+    "protein_name": "Genome polyprotein (contains prM/E, NS3 helicase/protease, NS5 RdRp)",
+    "gene_name": "ORF",
+    "organism_name": "Japanese encephalitis virus",
+    "organism_bsl": 3,
+    "select_agent": false,
+    "toxin": false,
+    "australia_group": false,
+    "who_priority_pathogen": false,
+    "pandemic_potential": false,
+    "target_class": "flavivirus polyprotein (E glycoprotein, NS3 protease/helicase)",
+    "pathogen_family": "Flaviviridae",
+    "applicable_subdomains": [
+      "binder_design",
+      "structure_prediction"
+    ],
+    "natural_language_summary": "Japanese encephalitis virus polyprotein: BSL-3 flavivirus; E protein is target of licensed vaccines; binder design for neutralizing antibody development and structure prediction for vaccine optimization"
+  },
+  {
+    "uniprot_accession": "P06935",
+    "protein_name": "Genome polyprotein (contains prM/E, NS3 helicase/protease, NS5 RdRp)",
+    "gene_name": "ORF",
+    "organism_name": "Yellow fever virus",
+    "organism_bsl": 3,
+    "select_agent": false,
+    "toxin": false,
+    "australia_group": false,
+    "who_priority_pathogen": false,
+    "pandemic_potential": false,
+    "target_class": "flavivirus polyprotein (E glycoprotein, NS3 protease/helicase)",
+    "pathogen_family": "Flaviviridae",
+    "applicable_subdomains": [
+      "binder_design"
+    ],
+    "natural_language_summary": "Yellow fever virus polyprotein: BSL-3 flavivirus with licensed attenuated vaccine; E glycoprotein domain III for binder design; neutralizing antibody development targets unvaccinated populations"
+  },
+  {
+    "uniprot_accession": "Q32ZE1",
+    "protein_name": "Genome polyprotein (contains prM/E, NS1, NS3, NS5)",
+    "gene_name": "ORF",
+    "organism_name": "Zika virus",
+    "organism_bsl": 2,
+    "select_agent": false,
+    "toxin": false,
+    "australia_group": false,
+    "who_priority_pathogen": true,
+    "pandemic_potential": false,
+    "target_class": "flavivirus polyprotein (E glycoprotein, NS3 protease/helicase)",
+    "pathogen_family": "Flaviviridae",
+    "applicable_subdomains": [
+      "binder_design"
+    ],
+    "natural_language_summary": "Zika virus polyprotein: BSL-2 WHO priority flavivirus causing microcephaly; E glycoprotein for binder design targeting pregnancy-safe prophylaxis; cross-reactive with dengue complicating vaccine design"
+  },
+  {
+    "uniprot_accession": "P03140",
+    "protein_name": "Hepatitis B surface antigen (HBsAg, small surface protein)",
+    "gene_name": "S",
+    "organism_name": "Hepatitis B virus",
+    "organism_bsl": 2,
+    "select_agent": false,
+    "toxin": false,
+    "australia_group": false,
+    "who_priority_pathogen": true,
+    "pandemic_potential": false,
+    "target_class": "hepatovirus surface antigen",
+    "pathogen_family": "Hepadnaviridae",
+    "applicable_subdomains": [
+      "binder_design",
+      "structure_prediction"
+    ],
+    "natural_language_summary": "HBV HBsAg: BSL-2 WHO priority hepatovirus surface antigen; diagnostic target in 300M chronic infections; binder design for viral entry inhibition and structure prediction informs drug-of-abuse detection assay"
+  },
+  {
+    "uniprot_accession": "P03138",
+    "protein_name": "Hepatitis B core antigen (HBcAg)",
+    "gene_name": "C",
+    "organism_name": "Hepatitis B virus",
+    "organism_bsl": 2,
+    "select_agent": false,
+    "toxin": false,
+    "australia_group": false,
+    "who_priority_pathogen": true,
+    "pandemic_potential": false,
+    "target_class": "hepatovirus nucleocapsid antigen",
+    "pathogen_family": "Hepadnaviridae",
+    "applicable_subdomains": [
+      "binder_design"
+    ],
+    "natural_language_summary": "HBV HBcAg: BSL-2 WHO priority nucleocapsid protein forming icosahedral particles; binder design targets cccDNA-associated HBcAg as functional cure biomarker"
+  },
+  {
+    "uniprot_accession": "P03420",
+    "protein_name": "Fusion glycoprotein F",
+    "gene_name": "F",
+    "organism_name": "Human respiratory syncytial virus",
+    "organism_bsl": 2,
+    "select_agent": false,
+    "toxin": false,
+    "australia_group": false,
+    "who_priority_pathogen": true,
+    "pandemic_potential": false,
+    "target_class": "viral fusion glycoprotein (countermeasure target)",
+    "pathogen_family": "Paramyxoviridae",
+    "applicable_subdomains": [
+      "binder_design"
+    ],
+    "natural_language_summary": "RSV F glycoprotein: BSL-2 pneumovirus fusion protein; target of approved biologics (nirsevimab, palivizumab); binder design for next-generation RSV prevention; prefusion conformation is the primary antigen"
+  },
+  {
+    "uniprot_accession": "A2IXS2",
+    "protein_name": "Hemagglutinin (HA)",
+    "gene_name": "HA",
+    "organism_name": "Influenza A virus (A/Qinghai/1/2005(H5N1))",
+    "organism_bsl": 3,
+    "select_agent": false,
+    "toxin": false,
+    "australia_group": false,
+    "who_priority_pathogen": true,
+    "pandemic_potential": true,
+    "target_class": "viral hemagglutinin surface glycoprotein",
+    "pathogen_family": "Orthomyxoviridae",
+    "applicable_subdomains": [
+      "binder_design",
+      "structure_prediction"
+    ],
+    "natural_language_summary": "H5N1 hemagglutinin: BSL-3 pandemic-potential avian influenza HA; receptor-binding site and stem region are targets for broadly neutralizing antibodies; binder design for pre-pandemic countermeasure development"
+  },
+  {
+    "uniprot_accession": "A1XC65",
+    "protein_name": "Polymerase basic protein 2 (PB2)",
+    "gene_name": "PB2",
+    "organism_name": "Influenza A virus (A/bar-headed goose/Qinghai/14/2005(H5N1))",
+    "organism_bsl": 3,
+    "select_agent": false,
+    "toxin": false,
+    "australia_group": false,
+    "who_priority_pathogen": true,
+    "pandemic_potential": true,
+    "target_class": "viral RNA polymerase subunit (cap-binding domain)",
+    "pathogen_family": "Orthomyxoviridae",
+    "applicable_subdomains": [
+      "enzyme_design"
+    ],
+    "natural_language_summary": "H5N1 PB2: BSL-3 pandemic-potential influenza A polymerase cap-binding subunit; E627K mutation increases mammalian transmissibility; enzyme engineering of PB2 cap-binding domain informs pandemic preparedness"
+  },
+  {
+    "uniprot_accession": "A4GCJ4",
+    "protein_name": "Nucleoprotein (NP)",
+    "gene_name": "NP",
+    "organism_name": "Influenza A virus (A/bar-headed goose/Qinghai/37/2005(H5N1))",
+    "organism_bsl": 3,
+    "select_agent": false,
+    "toxin": false,
+    "australia_group": false,
+    "who_priority_pathogen": true,
+    "pandemic_potential": true,
+    "target_class": "viral nucleoprotein (RNA-binding scaffold)",
+    "pathogen_family": "Orthomyxoviridae",
+    "applicable_subdomains": [
+      "stability_optimization"
+    ],
+    "natural_language_summary": "H5N1 NP: BSL-3 pandemic-potential influenza A nucleoprotein; stability engineering informs development of thermostable influenza antigens for low-resource-setting diagnostics"
+  },
+  {
+    "uniprot_accession": "P04298",
+    "protein_name": "RNA-directed RNA polymerase catalytic subunit (PB1)",
+    "gene_name": "PB1",
+    "organism_name": "Influenza A virus (A/Puerto Rico/8/1934(H1N1))",
+    "organism_bsl": 2,
+    "select_agent": false,
+    "toxin": false,
+    "australia_group": false,
+    "who_priority_pathogen": true,
+    "pandemic_potential": true,
+    "target_class": "viral RNA-dependent RNA polymerase",
+    "pathogen_family": "Orthomyxoviridae",
+    "applicable_subdomains": [
+      "enzyme_design"
+    ],
+    "natural_language_summary": "Influenza A PR8 PB1: BSL-2 standard laboratory strain RNA polymerase catalytic subunit; enzyme engineering of PB1 finger domain informs broad-spectrum antiviral development; pan-influenza polymerase inhibitors target PB1 active site"
+  }
+]

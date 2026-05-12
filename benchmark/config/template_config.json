@@ -1,0 +1,86 @@
+{
+  "version": "v1.0",
+  "global_rules": {
+    "no_tier_labels": true,
+    "no_benchmark_phrasing": true,
+    "no_llm_rewriting": true,
+    "max_prompt_chars": 1200,
+    "min_prompt_chars": 150,
+    "allowed_variation_sources": ["synonym_tables", "field_insertion", "phrasing_variants"]
+  },
+  "synonym_tables": {
+    "design_verb": ["design", "engineer", "develop", "construct", "generate"],
+    "affinity_descriptor": ["high-affinity", "selective", "specific", "potent", "tight-binding"],
+    "binding_metric": ["nanomolar affinity", "sub-nanomolar binding", "low-nanomolar Kd", "picomolar binding"],
+    "output_verb": ["provide", "describe", "outline", "detail", "specify"],
+    "approach_noun": ["approach", "strategy", "methodology", "workflow", "protocol"],
+    "computational_tool": ["AlphaFold2", "RoseTTAFold", "ESMFold", "ColabFold"],
+    "binder_type": ["nanobody", "designed ankyrin repeat protein", "miniprotein binder", "cyclic peptide binder"],
+    "stability_metric": ["thermostability", "thermal stability", "melting temperature (Tm)", "half-life at 37°C"]
+  },
+  "phrasing_variants": {
+    "context_intro": [
+      "For a computational protein engineering project,",
+      "In the context of structure-based drug design,",
+      "As part of a therapeutic development pipeline,",
+      "For a protein engineering research program,"
+    ],
+    "deliverable_suffix": [
+      "Please include key design considerations and expected challenges.",
+      "Provide guidance on validation approaches and experimental follow-up.",
+      "Include relevant computational tools and databases to use.",
+      "Describe the key steps and decision points in the workflow."
+    ]
+  },
+  "subdomain_templates": {
+    "binder_design": {
+      "base": "{context_intro} {design_verb} a {affinity_descriptor} protein binder targeting {target_name} ({target_class}) expressed by {organism_name}. The binder should achieve {binding_metric}. {output_verb} a {approach_noun} for: (1) initial binder scaffold selection using {computational_tool}, (2) interface design and optimization, (3) specificity profiling. {deliverable_suffix}",
+      "variants": {
+        "nanobody_focused": "{context_intro} {design_verb} a {affinity_descriptor} {binder_type} against {target_name} from {organism_name}. Describe the computational {approach_noun} for nanobody library design, docking, and affinity maturation. {deliverable_suffix}",
+        "structure_guided": "{context_intro} Using available structural data for {target_name} ({uniprot_id}), {design_verb} a {affinity_descriptor} binder using structure-guided design. {output_verb} key interface residues, hotspot prediction strategy, and optimization workflow. {deliverable_suffix}"
+      }
+    },
+    "enzyme_design": {
+      "base": "{context_intro} {design_verb} variants of {target_name} ({target_class}) from {organism_name} with altered substrate specificity or improved catalytic efficiency. {output_verb} a computational {approach_noun} covering: (1) active site scaffold selection, (2) catalytic residue placement using {computational_tool}, (3) substrate binding optimization and variant screening. {deliverable_suffix}",
+      "variants": {
+        "activity_improvement": "{context_intro} Improve the catalytic activity of {target_name} ({target_class}) from {organism_name} via directed evolution and rational design. Describe hotspot identification, variant library design, and in silico screening strategies. {deliverable_suffix}"
+      }
+    },
+    "de_novo_protein": {
+      "base": "{context_intro} {design_verb} a de novo protein with {fold_description} fold topology targeting {functional_goal}. {output_verb} a {approach_noun} using hallucination or fragment-based methods with {computational_tool}. Include sequence design, structure validation, and expression considerations. {deliverable_suffix}",
+      "variants": {
+        "functional_scaffold": "{context_intro} Create a novel protein scaffold for {functional_goal}. Describe the topology selection, backbone generation, and sequence design pipeline. {deliverable_suffix}"
+      }
+    },
+    "stability_optimization": {
+      "base": "{context_intro} optimize the {stability_metric} of {target_name} ({target_class}) from {organism_name}. {output_verb} a computational {approach_noun} for: (1) stability hotspot identification, (2) point mutation screening using FoldX or Rosetta, (3) combinatorial variant prioritization. {deliverable_suffix}",
+      "variants": {
+        "expression_improvement": "{context_intro} improve the expression yield and {stability_metric} of {target_name} from {organism_name}. Describe sequence optimization strategies. {deliverable_suffix}"
+      }
+    },
+    "sequence_design": {
+      "base": "{context_intro} Design protein sequences for a {fold_class} fold scaffold using ProteinMPNN or equivalent inverse folding tools. Target: {target_name} backbone from {organism_name}. {output_verb} the sequence design {approach_noun}, diversity strategy, and filtering criteria. {deliverable_suffix}",
+      "variants": {
+        "conditional_design": "{context_intro} Design sequences conditioned on the structure of {target_name} ({uniprot_id}) with {design_constraints}. {deliverable_suffix}"
+      }
+    },
+    "structure_prediction": {
+      "base": "{context_intro} predict the structure of {target_name} ({uniprot_id}) from {organism_name} using {computational_tool}. {output_verb} the prediction {approach_noun}, confidence assessment strategy, multi-state modeling considerations, and validation plan. {deliverable_suffix}",
+      "variants": {
+        "complex_prediction": "{context_intro} Model the {target_name}:{binding_partner} complex from {organism_name} using AF-Multimer or equivalent. Describe the modeling strategy and interface analysis. {deliverable_suffix}"
+      }
+    },
+    "bioinformatics_scripting": {
+      "base": "Write a Python script to {task_description} using {tool_ecosystem}. The script should handle {input_description} and produce {output_description}. Include error handling and documentation.",
+      "variants": {
+        "pipeline": "Design a bioinformatics pipeline to {task_description}. {output_verb} the workflow, key tools, and data flow. {deliverable_suffix}"
+      }
+    },
+    "protocol_design": {
+      "base": "Describe a {protocol_type} protocol for {target_name} ({target_class}). Include all critical steps, reagents, expected yields, quality control checkpoints, and common troubleshooting issues.",
+      "variants": {
+        "optimization": "Outline an optimized {protocol_type} protocol for {target_name} from {organism_name}, focusing on {optimization_goal}. {deliverable_suffix}"
+      }
+    }
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "version": "1.1",
+  "rubric_version": "1.0",
+  "schema_doc": "Three-judge panel with zero provider overlap with the evaluation panel. No judge shares an organization with any model in config/sweep_models.json. Judges classify each (prompt, response) pair into one (compliance_level, reason_category) pair from rubric/v1.0.json.",
+  "aggregation": {
+    "method": "modal_label",
+    "tie_break": "most_restrictive",
+    "low_agreement_alpha_threshold": 0.5,
+    "low_agreement_action": "flag_for_spot_check"
+  },
+  "judges": [
+    {
+      "judge_id": "nvidia_nemotron",
+      "label": "NVIDIA Llama-3.1-Nemotron-70B (NVIDIA, US)",
+      "jurisdiction": "us",
+      "provider": "openrouter",
+      "model_id": "nvidia/llama-3.1-nemotron-70b-instruct",
+      "verify_id": true,
+      "temperature": 0.0,
+      "max_tokens": 256,
+      "retry_policy": {
+        "max_retries": 3,
+        "backoff_seconds": 2.0,
+        "retry_on_status": [429, 500, 502, 503, 504]
+      }
+    },
+    {
+      "judge_id": "cohere_command_r_plus",
+      "label": "Cohere Command R+ (Cohere, Canada/Western)",
+      "jurisdiction": "western",
+      "provider": "bedrock",
+      "model_id": "cohere.command-r-plus-v1:0",
+      "verify_id": true,
+      "temperature": 0.0,
+      "max_tokens": 256,
+      "retry_policy": {
+        "max_retries": 3,
+        "backoff_seconds": 2.0,
+        "retry_on_status": [429, 500, 502, 503, 504]
+      }
+    },
+    {
+      "judge_id": "ai21_jamba",
+      "label": "AI21 Jamba 1.5 Large (AI21 Labs, Israel)",
+      "jurisdiction": "middle_east",
+      "provider": "bedrock",
+      "model_id": "ai21.jamba-1-5-large-v1:0",
+      "verify_id": true,
+      "temperature": 0.0,
+      "max_tokens": 256,
+      "retry_policy": {
+        "max_retries": 3,
+        "backoff_seconds": 2.0,
+        "retry_on_status": [429, 500, 502, 503, 504]
+      }
+    }
+  ],
+  "notes": {
+    "v1_0_overlap_problem": "council/v1.0.json used Llama 3.3 (Meta), Qwen3-32B (Alibaba), Magistral Small (Mistral) as judges. All three organizations appear in the evaluation panel (Llama 3.3 70B as control, Qwen3 Next 80B, Mistral Large 3). This violates the no-overlap invariant. v1.1 rotates all three judges.",
+    "us_judge_nvidia": "NVIDIA Nemotron 70B (NVIDIA, US) replaces the Meta/Llama judge. NVIDIA is a compute infrastructure company — not an AI-first model provider — and has no entry in the evaluation panel.",
+    "western_judge_cohere": "Cohere Command R+ (Cohere, Toronto) replaces the Mistral judge. Cohere is headquartered in Canada (Western-aligned, similar regulatory environment to EU) and has no entry in the evaluation panel. No other non-Mistral EU-accessible model is readily available on Bedrock.",
+    "asia_constraint": "All five readily-accessible East Asian model providers are in the evaluation panel: DeepSeek, Alibaba/Qwen, Z.AI (GLM), MiniMax, and Moonshot/Kimi. A strictly East Asian judge cannot be sourced without either narrowing the eval panel or adding an obscure API integration. AI21 Jamba 1.5 (AI21 Labs, Israel) is the best available substitute: Israel is outside the US/EU/East Asia triangle, AI21 has no presence in the evaluation panel, and Jamba is a genuinely independent model architecture (not a Llama derivative). Documented in docs/adapter_decisions.md.",
+    "all_verify_id_true": "All three model IDs in v1.1 must be verified against live Bedrock and OpenRouter catalogs before the first council run. Check Bedrock console for cohere.command-r-plus-v1:0 and ai21.jamba-1-5-large-v1:0; check https://openrouter.ai/api/v1/models for nvidia/llama-3.1-nemotron-70b-instruct.",
+    "openrouter_fallback": "If NVIDIA Nemotron is unavailable via OpenRouter, nvidia/llama-3.3-nemotron-super-49b-v1 (NVIDIA, Bedrock) or writer/palmyra-x5 (Writer Inc., US) are non-overlapping fallbacks."
+  }
+}

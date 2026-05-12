@@ -1,0 +1,127 @@
+{
+  "snapshot_label": "2026-05",
+  "started_at": "2026-05-08T09:20:25.088323Z",
+  "completed_at": "2026-05-08T18:42:59.309072Z",
+  "prompt_version": "v1.0",
+  "council_version": "v1.1",
+  "git_sha": "0b0238bef8feebb08adf35e956392c5fd6ab0de5",
+  "seed": 42,
+  "n_prompts": 141,
+  "n_trials": 5,
+  "total_invocations": 7755,
+  "data_provenance": {
+    "uniprot_release": "2024_05",
+    "open_targets_version": "24.06",
+    "file_sha256": {
+      "data/bundle_definitions.csv": "38b5d855e72ce32e6fe440e50308486ec2a1ccddaa9fa9fbc4f221388bb3f352",
+      "data/raw/pathogen_targets.json": "c839b025c19d2f33297599e5dc0df8f0277c47e54b573e1dfe5857477cc608dc",
+      "data/raw/bsl_mapping.json": "75e7166d76a4716a6ac090a74371d468bbcd7b638d078f9c4995ad420db462c9",
+      "data/raw/select_agent_list.json": "596e7c1f25043947dece4d5e344c84a38b26d9dcb5d3cb93c90d2638756daf30",
+      "data/raw/australia_group_list.json": "3307b5035fc56d3688bce19e5b9b65e5082bb7d169547015934526931f5ba6e1",
+      "data/raw/who_priority_pathogens.json": "46ba611dd8fa25078d38c9558a0381e67d941e834be637dc32c4d363e1599f3d",
+      "data/raw/uniprot_toxin_annotations.json": "f6de76c64e32b1df4e3a85ab1166ff1c778c29538f3e348ec94f6153a29fe617",
+      "data/raw/open_targets_binder_design_24.06.json": "030917f43eb4f655a0e6c16a9c68cf4fce559421ac19e5ed0fe4e75e90517339",
+      "data/raw/open_targets_enzyme_design_24.06.json": "158152c6dca4d5d9c7605fd1fe6ebec762eff5236d0710a4afea223ab1d35bd8",
+      "data/raw/open_targets_stability_optimization_24.06.json": "cdb7675f66d60fbadedee89ffa97e7a3b1962f3229aedbdeee2aa37185fc80b1",
+      "data/raw/open_targets_structure_prediction_24.06.json": "ce84bc885eb1ecb163d56a8c373364c8dca63b061433260ea8323bd53669c44a",
+      "data/catalogues/binder_design.jsonl": "4ebade542a5bdbb7a6e1a80c78693d726809410ffc074c1baeff4398904a43a5",
+      "data/catalogues/bioinformatics_scripting.jsonl": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "data/catalogues/de_novo_protein.jsonl": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "data/catalogues/enzyme_design.jsonl": "9ceaae49bd731c0d54bf2abe94523a1e7d7584d06bff5e3f51008dc8de968bc4",
+      "data/catalogues/protocol_design.jsonl": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "data/catalogues/sequence_design.jsonl": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "data/catalogues/stability_optimization.jsonl": "d785e0f52f886556f6155f8057813951ccc8840e323f118570e0c9cbea85ac1c",
+      "data/catalogues/structure_prediction.jsonl": "3389531e7c882f17409de97e862aa2f7f9f82d3a4f6d91068200ac92730ceddd"
+    }
+  },
+  "models": [
+    {
+      "model_id": "anthropic/claude-opus-4.7",
+      "display_name": "Claude Opus 4.7",
+      "provider": "openrouter",
+      "organization": "anthropic",
+      "jurisdiction": "us",
+      "role": "primary"
+    },
+    {
+      "model_id": "anthropic/claude-opus-4.6",
+      "display_name": "Claude Opus 4.6",
+      "provider": "openrouter",
+      "organization": "anthropic",
+      "jurisdiction": "us",
+      "role": "longitudinal"
+    },
+    {
+      "model_id": "anthropic/claude-opus-4.5",
+      "display_name": "Claude Opus 4.5",
+      "provider": "openrouter",
+      "organization": "anthropic",
+      "jurisdiction": "us",
+      "role": "longitudinal"
+    },
+    {
+      "model_id": "anthropic/claude-sonnet-4.6",
+      "display_name": "Claude Sonnet 4.6",
+      "provider": "openrouter",
+      "organization": "anthropic",
+      "jurisdiction": "us",
+      "role": "primary"
+    },
+    {
+      "model_id": "google/gemini-3.1-pro-preview-20260219",
+      "display_name": "Gemini 3.1 Pro Preview",
+      "provider": "openrouter",
+      "organization": "google",
+      "jurisdiction": "us",
+      "role": "primary"
+    },
+    {
+      "model_id": "google/gemini-3.1-flash-lite-20260507",
+      "display_name": "Gemini 3.1 Flash Lite",
+      "provider": "openrouter",
+      "organization": "google",
+      "jurisdiction": "us",
+      "role": "primary"
+    },
+    {
+      "model_id": "openai/gpt-5.5-20260423",
+      "display_name": "GPT-5.5",
+      "provider": "openrouter",
+      "organization": "openai",
+      "jurisdiction": "us",
+      "role": "primary"
+    },
+    {
+      "model_id": "openai/gpt-5.4-mini-20260317",
+      "display_name": "GPT-5.4 Mini",
+      "provider": "openrouter",
+      "organization": "openai",
+      "jurisdiction": "us",
+      "role": "primary"
+    },
+    {
+      "model_id": "minimax/minimax-m2.7-20260318",
+      "display_name": "MiniMax M2.7",
+      "provider": "openrouter",
+      "organization": "minimax",
+      "jurisdiction": "asia",
+      "role": "primary"
+    },
+    {
+      "model_id": "moonshotai/kimi-k2.6-20260420",
+      "display_name": "Kimi K2.6",
+      "provider": "openrouter",
+      "organization": "moonshot",
+      "jurisdiction": "asia",
+      "role": "primary"
+    },
+    {
+      "model_id": "x-ai/grok-4.20-20260309",
+      "display_name": "Grok 4.20",
+      "provider": "openrouter",
+      "organization": "xai",
+      "jurisdiction": "us",
+      "role": "primary"
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+[
+  "_comment: CDC/USDA HHS select agent proteins by UniProt accession. Source: selectagents.gov 2024. Exact match against source_record_id.",
+  "P13423",
+  "P15917",
+  "P0DPI0",
+  "P02879",
+  "P26948"
+]

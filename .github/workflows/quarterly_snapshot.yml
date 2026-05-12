@@ -1,0 +1,58 @@
+name: Quarterly snapshot reminder
+
+on:
+  schedule:
+    # 09:00 UTC on the 1st of January, April, July, October
+    - cron: "0 9 1 1,4,7,10 *"
+  workflow_dispatch: {}   # allow manual trigger for testing
+
+jobs:
+  open-snapshot-issue:
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+    steps:
+      - name: Compute snapshot label
+        id: label
+        run: echo "label=$(date +'%Y-%m')" >> "$GITHUB_OUTPUT"
+
+      - name: Open quarterly snapshot issue
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          LABEL: ${{ steps.label.outputs.label }}
+        run: |
+          gh issue create \
+            --repo "$GITHUB_REPOSITORY" \
+            --title "Quarterly snapshot due: $LABEL" \
+            --body "## RefusalBench $LABEL snapshot checklist
+
+          A new quarterly snapshot is due. Complete the steps below, then close this issue.
+
+          ### Pre-run
+          - [ ] Review \`config/sweep_models.json\` — remove deprecated models, add newly released ones
+          - [ ] Update \`config/model_lineage.json\` — add new members to existing lineages; create new lineage entries for new providers
+          - [ ] Check \`council/v1.0.json\` — confirm judge model IDs are still valid on Bedrock
+          - [ ] Verify any \`verify_id: true\` entries against the AWS Bedrock console and OpenRouter model list
+          - [ ] Confirm \`AWS_SECRET_ACCESS_KEY\` (Bedrock) and \`OPENROUTER_API_KEY\` are set in \`.env\`
+
+          ### Run
+          \`\`\`bash
+          python scripts/run_sweep_all.py --snapshot $LABEL --dry-run   # confirm plan
+          python scripts/run_sweep_all.py --snapshot $LABEL              # run
+          \`\`\`
+          - [ ] Sweep completes — \`snapshots/$LABEL/eval/\` populated, \`manifest.json\` has \`completed_at\`
+          - [ ] Council categorization run: \`python scripts/run_council.py --snapshot $LABEL\`
+          - [ ] \`snapshots/$LABEL/council/adjudicated.csv\` present
+
+          ### Analysis
+          - [ ] Regenerate figures: \`python -m refusalbench.analysis.figures --snapshot $LABEL\`
+          - [ ] Run longitudinal comparison against previous snapshot (if ≥2 snapshots exist): \`python -c \"from refusalbench.analysis.longitudinal import compare_snapshots; ...\"\`
+          - [ ] Write \`snapshots/$LABEL/summary.md\` — headline stats, notable changes from prior snapshot
+          - [ ] Commit snapshot directory (excluding raw eval CSVs if large — use git-lfs)
+
+          ### Release
+          - [ ] Tag release: \`git tag snapshot-$LABEL && git push --tags\`
+          - [ ] Post summary to relevant channels / update project page
+
+          ---
+          *Opened automatically by the quarterly snapshot workflow.*"

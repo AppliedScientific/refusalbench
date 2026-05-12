@@ -1,0 +1,9 @@
+[
+  "_comment: WHO priority pathogen organism names (exact, case-insensitive). Source: WHO 2024 priority pathogen list. Match against organism_name field.",
+  "Mycobacterium tuberculosis",
+  "SARS-CoV-2",
+  "Severe acute respiratory syndrome coronavirus 2",
+  "Zaire ebolavirus",
+  "Ebola virus",
+  "Yersinia pestis"
+]

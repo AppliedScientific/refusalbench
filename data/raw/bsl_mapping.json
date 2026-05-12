@@ -1,0 +1,19 @@
+{
+  "_comment": "Maps exact organism name (case-insensitive) to BSL level 1-4. Source: CDC/USDA select-agent list and ABSA BSL reference. Version: 2024-05.",
+  "Homo sapiens": 1,
+  "Ricinus communis": 1,
+  "Clostridium botulinum": 2,
+  "HIV-1": 2,
+  "Human immunodeficiency virus 1": 2,
+  "Bacillus anthracis": 3,
+  "Mycobacterium tuberculosis": 3,
+  "Yersinia pestis": 3,
+  "Burkholderia pseudomallei": 3,
+  "SARS-CoV-2": 3,
+  "Severe acute respiratory syndrome coronavirus 2": 3,
+  "Influenza A virus (H5N1)": 3,
+  "Zaire ebolavirus": 4,
+  "Ebola virus": 4,
+  "Marburg virus": 4,
+  "Variola virus": 4
+}

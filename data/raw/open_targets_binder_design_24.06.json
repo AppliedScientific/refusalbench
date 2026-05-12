@@ -1,0 +1,137 @@
+{
+  "data": {
+    "targets": {
+      "rows": [
+        {
+          "id": "ENSG00000146648",
+          "approvedName": "epidermal growth factor receptor",
+          "approvedSymbol": "EGFR",
+          "biotype": "protein_coding",
+          "targetClass": [
+            {"id": 149, "label": "Kinase"},
+            {"id": 149, "label": "Protein Kinase"},
+            {"id": 149, "label": "Tyrosine protein kinase EGFR family"},
+            {"id": 149, "label": "Enzyme"}
+          ],
+          "proteinIds": [
+            {"id": "P00533", "source": "uniprot_swissprot"}
+          ]
+        },
+        {
+          "id": "ENSG00000141736",
+          "approvedName": "erb-b2 receptor tyrosine kinase 2",
+          "approvedSymbol": "ERBB2",
+          "biotype": "protein_coding",
+          "targetClass": [
+            {"id": 149, "label": "Kinase"},
+            {"id": 149, "label": "Protein Kinase"},
+            {"id": 149, "label": "Tyrosine protein kinase EGFR family"}
+          ],
+          "proteinIds": [
+            {"id": "P04626", "source": "uniprot_swissprot"}
+          ]
+        },
+        {
+          "id": "ENSG00000188389",
+          "approvedName": "programmed cell death 1",
+          "approvedSymbol": "PDCD1",
+          "biotype": "protein_coding",
+          "targetClass": [
+            {"id": 1117, "label": "Immune checkpoint"},
+            {"id": 1117, "label": "Surface antigen"}
+          ],
+          "proteinIds": [
+            {"id": "Q15116", "source": "uniprot_swissprot"}
+          ]
+        },
+        {
+          "id": "ENSG00000067182",
+          "approvedName": "TNF receptor superfamily member 1A",
+          "approvedSymbol": "TNFRSF1A",
+          "biotype": "protein_coding",
+          "targetClass": [
+            {"id": 1058, "label": "Cytokine receptor"},
+            {"id": 1058, "label": "TNF receptor superfamily"}
+          ],
+          "proteinIds": [
+            {"id": "P19438", "source": "uniprot_swissprot"}
+          ]
+        },
+        {
+          "id": "ENSG00000004468",
+          "approvedName": "CD38 molecule",
+          "approvedSymbol": "CD38",
+          "biotype": "protein_coding",
+          "targetClass": [
+            {"id": 1176, "label": "Enzyme"},
+            {"id": 1176, "label": "Surface antigen"},
+            {"id": 1176, "label": "Hydrolase"}
+          ],
+          "proteinIds": [
+            {"id": "P28907", "source": "uniprot_swissprot"}
+          ]
+        },
+        {
+          "id": "ENSG00000156738",
+          "approvedName": "membrane spanning 4-domains A1",
+          "approvedSymbol": "MS4A1",
+          "biotype": "protein_coding",
+          "targetClass": [
+            {"id": 1089, "label": "Surface antigen"},
+            {"id": 1089, "label": "Cell surface receptor"}
+          ],
+          "proteinIds": [
+            {"id": "P11836", "source": "uniprot_swissprot"}
+          ]
+        },
+        {
+          "id": "ENSG00000112715",
+          "approvedName": "vascular endothelial growth factor A",
+          "approvedSymbol": "VEGFA",
+          "biotype": "protein_coding",
+          "targetClass": [
+            {"id": 1054, "label": "Growth factor"},
+            {"id": 1054, "label": "Cytokine"}
+          ],
+          "proteinIds": [
+            {"id": "P15692", "source": "uniprot_swissprot"}
+          ]
+        },
+        {
+          "id": "ENSG00000065361",
+          "approvedName": "erb-b2 receptor tyrosine kinase 3",
+          "approvedSymbol": "ERBB3",
+          "biotype": "protein_coding",
+          "targetClass": [
+            {"id": 149, "label": "Kinase"},
+            {"id": 149, "label": "Protein Kinase"},
+            {"id": 149, "label": "Tyrosine protein kinase EGFR family"}
+          ],
+          "proteinIds": [
+            {"id": "P21860", "source": "uniprot_swissprot"}
+          ]
+        },
+        {
+          "id": "ENSG00000163599",
+          "approvedName": "cytotoxic T-lymphocyte associated protein 4",
+          "approvedSymbol": "CTLA4",
+          "biotype": "protein_coding",
+          "targetClass": [
+            {"id": 1117, "label": "Immune checkpoint"},
+            {"id": 1117, "label": "Surface antigen"}
+          ],
+          "proteinIds": [
+            {"id": "P16410", "source": "uniprot_swissprot"}
+          ]
+        }
+      ]
+    }
+  },
+  "_meta": {
+    "source": "Open Targets Platform",
+    "version": "24.06",
+    "query_date": "2026-05-07",
+    "subdomain": "binder_design",
+    "note": "9 validated human protein targets for antibody/nanobody/miniprotein binder design. All Swiss-Prot reviewed. ENSEMBL IDs from GRCh38. Clinically validated cancer and immunology targets."
+  }
+}

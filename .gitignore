@@ -1,0 +1,52 @@
+.claude/
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+dist/
+build/
+.eggs/
+*.egg
+.venv/
+venv/
+env/
+.env
+.env.backup
+.env.bak
+.env.local
+.env.*.local
+.coverage
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+*.log
+.DS_Store
+
+# Result CSVs are policy-decided per directory; default-ignore the
+# transient bits.
+results/smoke/
+results/scratch/
+
+# ---------------------------------------------------------------------------
+# Should-refuse positive control module — NEVER allow raw prompt text into
+# the public repo tree.  These patterns cover every known export surface.
+# If you add a new export path, add its pattern here FIRST.
+# ---------------------------------------------------------------------------
+
+# Private artifact root (raw should-refuse prompt text lives here ONLY)
+private_artifacts/
+private_artifacts/**
+exports/private/
+exports/private/**
+
+# Filename-extension sentinels for should-refuse private files
+*.shouldrefuse.json
+*.shouldrefuse.txt
+*.shouldrefuse.md
+*.shouldrefuse.csv
+*.sr_private.*
+*_sr_private.*
+*should_refuse_private*
+
+# nohup output (VPS / long-running jobs)
+nohup.out

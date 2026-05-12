@@ -1,0 +1,84 @@
+{
+  "data": {
+    "targets": {
+      "rows": [
+        {
+          "id": "ENSG00000160712",
+          "approvedName": "interleukin 6 receptor",
+          "approvedSymbol": "IL6R",
+          "biotype": "protein_coding",
+          "targetClass": [
+            {"id": 3, "label": "Cytokine receptor"},
+            {"id": 3, "label": "Interleukin receptor"}
+          ],
+          "proteinIds": [
+            {"id": "P08887", "source": "uniprot_swissprot"}
+          ]
+        },
+        {
+          "id": "ENSG00000169252",
+          "approvedName": "adrenoceptor beta 2",
+          "approvedSymbol": "ADRB2",
+          "biotype": "protein_coding",
+          "targetClass": [
+            {"id": 48, "label": "GPCR"},
+            {"id": 48, "label": "Class A orphan / other"},
+            {"id": 48, "label": "Adrenergic receptor"}
+          ],
+          "proteinIds": [
+            {"id": "P07550", "source": "uniprot_swissprot"}
+          ]
+        },
+        {
+          "id": "ENSG00000121966",
+          "approvedName": "C-X-C motif chemokine receptor 4",
+          "approvedSymbol": "CXCR4",
+          "biotype": "protein_coding",
+          "targetClass": [
+            {"id": 48, "label": "GPCR"},
+            {"id": 48, "label": "Chemokine receptor"},
+            {"id": 48, "label": "Class A orphan / other"}
+          ],
+          "proteinIds": [
+            {"id": "P61073", "source": "uniprot_swissprot"}
+          ]
+        },
+        {
+          "id": "ENSG00000128271",
+          "approvedName": "adenosine A2a receptor",
+          "approvedSymbol": "ADORA2A",
+          "biotype": "protein_coding",
+          "targetClass": [
+            {"id": 48, "label": "GPCR"},
+            {"id": 48, "label": "Adenosine receptor"},
+            {"id": 48, "label": "Class A orphan / other"}
+          ],
+          "proteinIds": [
+            {"id": "P29274", "source": "uniprot_swissprot"}
+          ]
+        },
+        {
+          "id": "ENSG00000112164",
+          "approvedName": "glucagon like peptide 1 receptor",
+          "approvedSymbol": "GLP1R",
+          "biotype": "protein_coding",
+          "targetClass": [
+            {"id": 48, "label": "GPCR"},
+            {"id": 48, "label": "Class B1 (secretin)"},
+            {"id": 48, "label": "Glucagon receptor family"}
+          ],
+          "proteinIds": [
+            {"id": "P43220", "source": "uniprot_swissprot"}
+          ]
+        }
+      ]
+    }
+  },
+  "_meta": {
+    "source": "Open Targets Platform",
+    "version": "24.06",
+    "query_date": "2026-05-07",
+    "subdomain": "structure_prediction",
+    "note": "5 validated human membrane protein and receptor targets for structural biology and AlphaFold2/RoseTTAFold structure prediction. All Swiss-Prot reviewed. Covers cytokine receptors (IL6R), adrenergic GPCRs (ADRB2), chemokine GPCRs (CXCR4), adenosine GPCRs (ADORA2A), and incretin receptors (GLP1R). Therapeutically important targets with partial or incomplete experimental structures."
+  }
+}

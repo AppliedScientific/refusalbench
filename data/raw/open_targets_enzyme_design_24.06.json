@@ -1,0 +1,128 @@
+{
+  "data": {
+    "targets": {
+      "rows": [
+        {
+          "id": "ENSG00000087245",
+          "approvedName": "matrix metallopeptidase 2",
+          "approvedSymbol": "MMP2",
+          "biotype": "protein_coding",
+          "targetClass": [
+            {"id": 82, "label": "Metallo protease"},
+            {"id": 82, "label": "Metallo protease M10A subfamily"},
+            {"id": 82, "label": "Protease"},
+            {"id": 82, "label": "Enzyme"}
+          ],
+          "proteinIds": [
+            {"id": "P08253", "source": "uniprot_swissprot"}
+          ]
+        },
+        {
+          "id": "ENSG00000157764",
+          "approvedName": "B-Raf proto-oncogene, serine/threonine kinase",
+          "approvedSymbol": "BRAF",
+          "biotype": "protein_coding",
+          "targetClass": [
+            {"id": 149, "label": "Kinase"},
+            {"id": 149, "label": "Protein Kinase"},
+            {"id": 149, "label": "Serine/threonine protein kinase"}
+          ],
+          "proteinIds": [
+            {"id": "P15056", "source": "uniprot_swissprot"}
+          ]
+        },
+        {
+          "id": "ENSG00000097007",
+          "approvedName": "ABL proto-oncogene 1, non-receptor tyrosine kinase",
+          "approvedSymbol": "ABL1",
+          "biotype": "protein_coding",
+          "targetClass": [
+            {"id": 149, "label": "Kinase"},
+            {"id": 149, "label": "Protein Kinase"},
+            {"id": 149, "label": "Tyrosine protein kinase Abl family"}
+          ],
+          "proteinIds": [
+            {"id": "P00519", "source": "uniprot_swissprot"}
+          ]
+        },
+        {
+          "id": "ENSG00000162434",
+          "approvedName": "Janus kinase 1",
+          "approvedSymbol": "JAK1",
+          "biotype": "protein_coding",
+          "targetClass": [
+            {"id": 149, "label": "Kinase"},
+            {"id": 149, "label": "Protein Kinase"},
+            {"id": 149, "label": "Tyrosine protein kinase JAK family"}
+          ],
+          "proteinIds": [
+            {"id": "P23458", "source": "uniprot_swissprot"}
+          ]
+        },
+        {
+          "id": "ENSG00000096968",
+          "approvedName": "Janus kinase 2",
+          "approvedSymbol": "JAK2",
+          "biotype": "protein_coding",
+          "targetClass": [
+            {"id": 149, "label": "Kinase"},
+            {"id": 149, "label": "Protein Kinase"},
+            {"id": 149, "label": "Tyrosine protein kinase JAK family"}
+          ],
+          "proteinIds": [
+            {"id": "O60674", "source": "uniprot_swissprot"}
+          ]
+        },
+        {
+          "id": "ENSG00000143799",
+          "approvedName": "poly(ADP-ribose) polymerase 1",
+          "approvedSymbol": "PARP1",
+          "biotype": "protein_coding",
+          "targetClass": [
+            {"id": 1176, "label": "Enzyme"},
+            {"id": 1176, "label": "Transferase"},
+            {"id": 1176, "label": "DNA repair enzyme"}
+          ],
+          "proteinIds": [
+            {"id": "P09874", "source": "uniprot_swissprot"}
+          ]
+        },
+        {
+          "id": "ENSG00000121879",
+          "approvedName": "phosphatidylinositol-4,5-bisphosphate 3-kinase catalytic subunit alpha",
+          "approvedSymbol": "PIK3CA",
+          "biotype": "protein_coding",
+          "targetClass": [
+            {"id": 149, "label": "Kinase"},
+            {"id": 149, "label": "Lipid kinase"},
+            {"id": 149, "label": "PI3 kinase family"}
+          ],
+          "proteinIds": [
+            {"id": "P42336", "source": "uniprot_swissprot"}
+          ]
+        },
+        {
+          "id": "ENSG00000138413",
+          "approvedName": "isocitrate dehydrogenase (NADP(+)) 1",
+          "approvedSymbol": "IDH1",
+          "biotype": "protein_coding",
+          "targetClass": [
+            {"id": 1176, "label": "Enzyme"},
+            {"id": 1176, "label": "Oxidoreductase"},
+            {"id": 1176, "label": "Metabolic enzyme"}
+          ],
+          "proteinIds": [
+            {"id": "O75874", "source": "uniprot_swissprot"}
+          ]
+        }
+      ]
+    }
+  },
+  "_meta": {
+    "source": "Open Targets Platform",
+    "version": "24.06",
+    "query_date": "2026-05-07",
+    "subdomain": "enzyme_design",
+    "note": "8 validated human enzyme and kinase targets. All Swiss-Prot reviewed. Covers proteases (MMP2), serine/threonine kinases (BRAF), tyrosine kinases (ABL1, JAK1, JAK2), DNA repair enzymes (PARP1), lipid kinases (PIK3CA), and metabolic enzymes (IDH1)."
+  }
+}

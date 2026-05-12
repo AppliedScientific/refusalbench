@@ -1,0 +1,130 @@
+{
+  "snapshot": "2026-05",
+  "provider": "bedrock",
+  "token_estimation_method": "character_count / 4.0 (standard English approximation)",
+  "chars_per_token": 4.0,
+  "n_prompts": 141,
+  "n_trials": 5,
+  "system_prompt_chars": 113,
+  "models": [
+    {
+      "model_id": "us.amazon.nova-pro-v1:0",
+      "display_name": "Amazon Nova Pro",
+      "n_calls": 705,
+      "n_errors": 0,
+      "n_empty_responses": 0,
+      "total_input_tokens_est": 126212,
+      "total_output_tokens_est": 793408,
+      "avg_input_tokens_per_call": 179.0,
+      "avg_output_tokens_per_call": 1125.4,
+      "pricing_usd_per_mtok": {
+        "input": 0.8,
+        "output": 3.2
+      },
+      "cost_usd": 2.6399
+    },
+    {
+      "model_id": "us.deepseek.r1-v1:0",
+      "display_name": "DeepSeek R1",
+      "n_calls": 705,
+      "n_errors": 0,
+      "n_empty_responses": 57,
+      "total_input_tokens_est": 126212,
+      "total_output_tokens_est": 512161,
+      "avg_input_tokens_per_call": 179.0,
+      "avg_output_tokens_per_call": 726.5,
+      "pricing_usd_per_mtok": {
+        "input": 0.55,
+        "output": 2.19
+      },
+      "cost_usd": 1.191
+    },
+    {
+      "model_id": "deepseek.v3.2",
+      "display_name": "DeepSeek V3.2",
+      "n_calls": 704,
+      "n_errors": 1,
+      "n_empty_responses": 0,
+      "total_input_tokens_est": 126110,
+      "total_output_tokens_est": 1302692,
+      "avg_input_tokens_per_call": 179.1,
+      "avg_output_tokens_per_call": 1850.4,
+      "pricing_usd_per_mtok": {
+        "input": 0.27,
+        "output": 1.1
+      },
+      "cost_usd": 1.467
+    },
+    {
+      "model_id": "zai.glm-5",
+      "display_name": "GLM-5 (Z.AI)",
+      "n_calls": 705,
+      "n_errors": 0,
+      "n_empty_responses": 0,
+      "total_input_tokens_est": 126212,
+      "total_output_tokens_est": 1354135,
+      "avg_input_tokens_per_call": 179.0,
+      "avg_output_tokens_per_call": 1920.8,
+      "pricing_usd_per_mtok": {
+        "input": 0.5,
+        "output": 1.5
+      },
+      "cost_usd": 2.0943
+    },
+    {
+      "model_id": "us.meta.llama3-3-70b-instruct-v1:0",
+      "display_name": "Llama 3.3 70B",
+      "n_calls": 705,
+      "n_errors": 0,
+      "n_empty_responses": 0,
+      "total_input_tokens_est": 126212,
+      "total_output_tokens_est": 837146,
+      "avg_input_tokens_per_call": 179.0,
+      "avg_output_tokens_per_call": 1187.4,
+      "pricing_usd_per_mtok": {
+        "input": 0.72,
+        "output": 0.72
+      },
+      "cost_usd": 0.6936
+    },
+    {
+      "model_id": "mistral.mistral-large-3-675b-instruct",
+      "display_name": "Mistral Large 3",
+      "n_calls": 705,
+      "n_errors": 0,
+      "n_empty_responses": 0,
+      "total_input_tokens_est": 126212,
+      "total_output_tokens_est": 1279974,
+      "avg_input_tokens_per_call": 179.0,
+      "avg_output_tokens_per_call": 1815.6,
+      "pricing_usd_per_mtok": {
+        "input": 3.0,
+        "output": 9.0
+      },
+      "cost_usd": 11.8984
+    },
+    {
+      "model_id": "qwen.qwen3-next-80b-a3b",
+      "display_name": "Qwen3 Next 80B",
+      "n_calls": 705,
+      "n_errors": 0,
+      "n_empty_responses": 0,
+      "total_input_tokens_est": 126212,
+      "total_output_tokens_est": 1246273,
+      "avg_input_tokens_per_call": 179.0,
+      "avg_output_tokens_per_call": 1767.8,
+      "pricing_usd_per_mtok": {
+        "input": 0.7,
+        "output": 2.0
+      },
+      "cost_usd": 2.5809
+    }
+  ],
+  "totals": {
+    "n_calls": 4934,
+    "n_errors": 1,
+    "total_input_tokens_est": 883384,
+    "total_output_tokens_est": 7325788,
+    "cost_usd": 22.5652
+  }
+}
