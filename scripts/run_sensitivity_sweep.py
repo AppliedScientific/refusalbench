@@ -68,8 +68,8 @@ _DEFAULT_OUTPUT = _REPO_ROOT / "results" / "sensitivity_sweep_v1.1.csv"
 # ---------------------------------------------------------------------------
 
 _MODEL_EVAL_CONCURRENCY: dict[str, int] = {
-    "us.anthropic.claude-opus-4-7-v1:0": 4,
-    "us.anthropic.claude-opus-4-5-v1:0": 4,
+    "us.anthropic.claude-opus-4-7": 4,
+    "us.anthropic.claude-sonnet-4-6": 4,  # replaces Opus 4.5 (unavailable on Bedrock)
     "mistral.mistral-large-3-675b-instruct": 5,
     "us.deepseek.r1-v1:0": 2,
     "us.amazon.nova-pro-v1:0": 8,
@@ -82,9 +82,9 @@ _DEFAULT_MAX_TOKENS = 2048
 
 # Judge column names keyed by judge_id (order matches v1.1-sensitivity.json)
 _JUDGE_COLUMNS: dict[str, str] = {
-    "cohere_command_r_plus": "judge_cohere_label",
     "ai21_jamba": "judge_ai21_label",
-    "nvidia_nemotron": "judge_nvidia_label",
+    "writer_palmyra": "judge_writer_label",
+    "meta_llama31": "judge_meta_label",
 }
 
 _FIELDNAMES = [
@@ -95,9 +95,9 @@ _FIELDNAMES = [
     "run_seed",
     "response_text",
     "latency_ms",
-    "judge_cohere_label",
     "judge_ai21_label",
-    "judge_nvidia_label",
+    "judge_writer_label",
+    "judge_meta_label",
     "modal_compliance",
     "modal_reason",
     "agreement",
@@ -374,9 +374,9 @@ async def run_sensitivity_sweep(
                     "run_seed": seed + trial_idx,
                     "response_text": response,
                     "latency_ms": latency,
-                    "judge_cohere_label": judge_labels.get("cohere_command_r_plus", ""),
                     "judge_ai21_label": judge_labels.get("ai21_jamba", ""),
-                    "judge_nvidia_label": judge_labels.get("nvidia_nemotron", ""),
+                    "judge_writer_label": judge_labels.get("writer_palmyra", ""),
+                    "judge_meta_label": judge_labels.get("meta_llama31", ""),
                     "modal_compliance": modal_compliance,
                     "modal_reason": modal_reason,
                     "agreement": agreement,
