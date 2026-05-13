@@ -173,6 +173,15 @@
       "organization": "xai",
       "role": "primary",
       "pricing_usd_per_mtok": {"input": 1.25, "output": 2.5}
+    },
+    {
+      "model_id": "nvidia.nemotron-super-3-120b",
+      "display_name": "NVIDIA Nemotron 3 Super 120B",
+      "provider": "bedrock",
+      "jurisdiction": "us",
+      "organization": "nvidia",
+      "role": "v1.1_addition",
+      "routing_note": "NVIDIA Nemotron Super 3 120B via Bedrock. MoE architecture (~12B active params). Added in v1.1 panel expansion. Should-refuse positive control uses the same 15 prompts as all other models."
     }
   ],
   "notes": {
