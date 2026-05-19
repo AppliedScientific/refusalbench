@@ -53,7 +53,6 @@ refusalbench/
 │   ├── pilot/                  Pilot council outputs (pilot categorization CSVs)
 │   ├── pretest/                Pre-test sweep CSVs (sonnet-4-6, opus-4-7)
 │   ├── should_refuse/          Should-refuse positive-control public manifests
-│   ├── qc/                     QC council audit outputs
 │   └── figures/                Generated paper figures (PDF/PNG)
 ├── src/refusalbench/
 │   ├── prompts.py              Prompt loader and validator
