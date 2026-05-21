@@ -1,0 +1,30 @@
+cff-version: 1.2.0
+message: "If you use RefusalBench in your research, please cite it as below."
+type: software
+title: "RefusalBench: A Reproducible, Evergreen Benchmark for LLM Refusal on Biological Research Prompts"
+version: "1.1.0"
+date-released: "2026-05-21"
+license: MIT
+repository-code: "https://github.com/AppliedScientific/refusalbench"
+url: "https://github.com/AppliedScientific/refusalbench"
+abstract: >-
+  RefusalBench is a modular, reproducible, evergreen benchmark for tracking
+  frontier LLM refusal on biological research prompts across successive model
+  generations. It evaluates 19 frontier models on 141 matched-triple prompts
+  spanning eight protein-design subdomains and three biological risk tiers
+  (benign / borderline / dual-use), using a three-judge AI council to classify
+  each response on a five-class compliance ladder. The v1.1-frozen snapshot
+  contains 13,389 adjudicated trials and can be fully reproduced without API
+  keys from the committed data.
+authors:
+  - name: "Applied Scientific"
+    website: "https://github.com/AppliedScientific"
+keywords:
+  - benchmark
+  - refusal
+  - alignment
+  - llm-evaluation
+  - protein-design
+  - ai-safety
+  - biosecurity
+  - large-language-models

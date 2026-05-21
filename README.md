@@ -1,10 +1,15 @@
 # RefusalBench
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![Python 3.11+](https://img.shields.io/badge/python-3.11%2B-blue.svg)](https://www.python.org/downloads/)
+[![CI](https://github.com/AppliedScientific/refusalbench/actions/workflows/ci.yml/badge.svg)](https://github.com/AppliedScientific/refusalbench/actions/workflows/ci.yml)
+[![HF Space](https://img.shields.io/badge/%F0%9F%A4%97%20Space-RefusalBench-blue)](https://huggingface.co/spaces/AppliedScientific/refusalbench)
+[![Dataset](https://img.shields.io/badge/%F0%9F%A4%97%20Dataset-refusalbench-blue)](https://huggingface.co/datasets/AppliedScientific/refusalbench)
+[![Paper](https://img.shields.io/badge/paper-coming%20soon-b31b1b.svg)](#citation)
+
 **RefusalBench** is a modular, reproducible, evergreen benchmark for tracking frontier LLM refusal on biological research prompts across successive model generations. It evaluates 19 frontier models on 141 matched-triple prompts spanning eight protein-design subdomains and three biological risk tiers (benign / borderline / dual-use), using a three-judge AI council to classify each response on a five-class compliance ladder.
 
 The v1.0 prompt set and the inaugural May 2026 snapshot (13,389 adjudicated rows across 19 models, v1.1-frozen) are fully committed to this repository. All statistical analyses can be re-run without API keys from the committed data.
-
-**License:** MIT | **Python:** ≥ 3.11
 
 ---
 
@@ -53,7 +58,7 @@ refusalbench/
 │   ├── pilot/                  Pilot council outputs (pilot categorization CSVs)
 │   ├── pretest/                Pre-test sweep CSVs (sonnet-4-6, opus-4-7)
 │   ├── should_refuse/          Should-refuse positive-control public manifests
-│   └── figures/                Generated paper figures (PDF/PNG)
+│   └── figures/                Generated paper figures — gitignored, rebuild with `python -m refusalbench.analysis.figures`
 ├── src/refusalbench/
 │   ├── prompts.py              Prompt loader and validator
 │   ├── runner.py               Sweep runner with resumption and deduplication
@@ -64,6 +69,7 @@ refusalbench/
 │   └── analysis/
 │       ├── stats.py            H1–H5 statistical tests
 │       └── figures.py          Figure generation utilities
+├── hf_space/                   HuggingFace Space scaffold (Gradio leaderboard, ready to deploy)
 ├── scripts/                    CLI entry points (see below)
 ├── tests/                      324 unit tests, all mock-driven
 └── docs/
@@ -151,8 +157,26 @@ See [`docs/methodology.md`](docs/methodology.md) for the complete evaluation met
 
 ---
 
+## Contributing
+
+Contributions are welcome — new models, updated snapshots, bug fixes, and documentation improvements. Please read [CONTRIBUTING.md](CONTRIBUTING.md) before opening a pull request.
+
+---
+
 ## Citation
 
+If you use RefusalBench in your research, please cite:
+
+```bibtex
+@software{refusalbench2026,
+  title        = {{RefusalBench}: A Reproducible, Evergreen Benchmark for
+                  {LLM} Refusal on Biological Research Prompts},
+  author       = {{Applied Scientific}},
+  year         = {2026},
+  version      = {1.1.0},
+  url          = {https://github.com/AppliedScientific/refusalbench},
+  note         = {19 frontier models, 141 prompts, 13{,}389 adjudicated trials},
+}
 ```
-RefusalBench v1.1 (2026). https://github.com/AppliedScientific/refusalbench
-```
+
+> **Paper:** _coming soon_ — this README will be updated with the arXiv DOI on publication.
