@@ -1,8 +1,8 @@
 # RefusalBench
 
-**RefusalBench** is a modular, reproducible, evergreen benchmark for tracking frontier LLM refusal on biological research prompts across successive model generations. It evaluates 18 frontier models on 141 matched-triple prompts spanning eight protein-design subdomains and three biological risk tiers (benign / borderline / dual-use), using a three-judge AI council to classify each response on a five-class compliance ladder.
+**RefusalBench** is a modular, reproducible, evergreen benchmark for tracking frontier LLM refusal on biological research prompts across successive model generations. It evaluates 19 frontier models on 141 matched-triple prompts spanning eight protein-design subdomains and three biological risk tiers (benign / borderline / dual-use), using a three-judge AI council to classify each response on a five-class compliance ladder.
 
-The v1.0 prompt set and the inaugural May 2026 snapshot (12,684 adjudicated rows across 18 models) are fully committed to this repository. All statistical analyses can be re-run without API keys from the committed data.
+The v1.0 prompt set and the inaugural May 2026 snapshot (13,389 adjudicated rows across 19 models, v1.1-frozen) are fully committed to this repository. All statistical analyses can be re-run without API keys from the committed data.
 
 **License:** MIT | **Python:** ≥ 3.11
 
@@ -11,7 +11,7 @@ The v1.0 prompt set and the inaugural May 2026 snapshot (12,684 adjudicated rows
 ## Quickstart
 
 ```bash
-git clone https://github.com/VibeCodingScientist/refusalbench
+git clone https://github.com/AppliedScientific/refusalbench
 cd refusalbench
 make install        # pip install -e ".[dev,stats]"
 make test           # 324 tests, all mock-driven — no API keys needed
@@ -34,7 +34,7 @@ refusalbench/
 │   ├── council/v1.1.json       Three-judge council config (NVIDIA, Cohere, AI21)
 │   ├── rubric/v1.0.json        Five-class compliance ladder × 16-category reason taxonomy
 │   ├── config/
-│   │   ├── sweep_models.json       18-model routing, pricing, jurisdiction metadata
+│   │   ├── sweep_models.json       19-model routing, pricing, jurisdiction metadata
 │   │   ├── model_lineage.json      Lineage tracking for longitudinal comparisons
 │   │   ├── sampling_config.json    Bundle counts and stratification rules per subdomain
 │   │   └── should_refuse_criteria.yaml  Eligibility criteria (C1–C5) for positive-control module
@@ -44,7 +44,7 @@ refusalbench/
 │   ├── catalogues/             Per-subdomain JSONL catalogues (derived, committed)
 │   └── bundle_definitions.csv  47-row bundle mapping table
 ├── results/
-│   ├── snapshots/2026-05/      Inaugural sweep: 18 eval CSVs + adjudicated.csv (12,684 rows)
+│   ├── snapshots/2026-05/      Inaugural sweep: 19 eval CSVs + adjudicated.csv (13,389 rows, v1.1-frozen)
 │   ├── pilot/                  Pilot council outputs (pilot categorization CSVs)
 │   ├── pretest/                Pre-test sweep CSVs (sonnet-4-6, opus-4-7)
 │   ├── should_refuse/          Should-refuse positive-control public manifests
@@ -76,7 +76,7 @@ refusalbench/
 
 | Script | Purpose |
 |---|---|
-| `scripts/run_sweep_all.py` | Full 18-model sweep — creates a dated snapshot |
+| `scripts/run_sweep_all.py` | Full 19-model sweep — creates a dated snapshot |
 | `scripts/run_council.py` | Adjudicate an existing sweep snapshot |
 | `scripts/should_refuse_cli.py` | Run the should-refuse positive-control module |
 | `scripts/validate_prompts.py` | Validate the frozen prompt set integrity |
@@ -99,7 +99,7 @@ Required keys for running a new sweep (not needed for analysis-only work):
 | Variable | Purpose | How to obtain |
 |---|---|---|
 | `OPENROUTER_API_KEY` | Routes most models (OpenAI, xAI, Meta, Mistral, Asian providers) | [openrouter.ai/keys](https://openrouter.ai/keys) |
-| `AWS_SECRET_ACCESS_KEY` | AWS Bedrock access (Anthropic, Google, Cohere, AI21, Amazon) | Bedrock console — must be `ABSK`-prefixed format |
+| `BEDROCK_API_KEY` | AWS Bedrock access (Amazon, Mistral, DeepSeek, Qwen, GLM, NVIDIA) | Bedrock console — must be `ABSK`-prefixed format |
 | `AWS_REGION` | Bedrock region (default: `us-east-1`) | Standard AWS region string |
 
 **Analysis-only:** No API keys required. All results can be reproduced from the committed `results/snapshots/2026-05/council/adjudicated.csv`.
@@ -150,5 +150,5 @@ See [`docs/methodology.md`](docs/methodology.md) for the complete evaluation met
 ## Citation
 
 ```
-RefusalBench v1.0 (2026). https://github.com/VibeCodingScientist/refusalbench
+RefusalBench v1.1 (2026). https://github.com/AppliedScientific/refusalbench
 ```

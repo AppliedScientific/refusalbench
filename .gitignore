@@ -50,3 +50,11 @@ exports/private/**
 
 # nohup output (VPS / long-running jobs)
 nohup.out
+
+# ---------------------------------------------------------------------------
+# Manuscript-only outputs — generated figures and derived analysis tables.
+# These are for the paper only and do not belong in the public benchmark repo.
+# ---------------------------------------------------------------------------
+results/figures/
+results/figures_pdf/
+results/snapshots/**/tables_*.md
