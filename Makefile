@@ -1,4 +1,8 @@
-.PHONY: install test lint typecheck ci fmt clean
+.PHONY: venv install test lint typecheck ci fmt clean
+
+venv:
+	python3 -m venv .venv
+	@echo "Run: source .venv/bin/activate"
 
 install:
 	pip install -e ".[dev,stats]"

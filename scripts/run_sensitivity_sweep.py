@@ -52,7 +52,7 @@ _BUNDLES_CSV = _REPO_ROOT / "benchmark" / "sensitivity_bundles.csv"
 _FRAMINGS_JSON = _REPO_ROOT / "benchmark" / "prompts" / "system" / "system-prompts-v1.1.json"
 _COUNCIL_JSON = _REPO_ROOT / "benchmark" / "council" / "v1.1-sensitivity.json"
 _PROMPTS_DIR = _REPO_ROOT / "benchmark" / "prompts" / "v1.0"
-_DEFAULT_OUTPUT = _REPO_ROOT / "results" / "sensitivity_sweep_v1.1.csv"
+_DEFAULT_OUTPUT = _REPO_ROOT / "results" / "snapshots" / "2026-05" / "sensitivity" / "sensitivity_sweep_v1.1.csv"
 
 # ---------------------------------------------------------------------------
 # Concurrency defaults — tuned for Bedrock on-demand (us-east-1)

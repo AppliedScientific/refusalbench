@@ -148,5 +148,5 @@ is a methodologically notable anomaly warranting further investigation.
 ---
 
 *Sweep specification:* `benchmark/council/v1.1-sensitivity.json`, `benchmark/sensitivity_bundles.csv`,
-`benchmark/prompts/system/system-prompts-v1.1.json`. *Results:* `results/sensitivity_sweep_v1.1.csv`
+`benchmark/prompts/system/system-prompts-v1.1.json`. *Results:* `results/snapshots/2026-05/sensitivity/sensitivity_sweep_v1.1.csv`
 (3,600 rows). *Analysis script:* `scripts/run_sensitivity_sweep.py`.

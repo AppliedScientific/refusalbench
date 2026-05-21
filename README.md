@@ -13,6 +13,11 @@ The v1.0 prompt set and the inaugural May 2026 snapshot (13,389 adjudicated rows
 ```bash
 git clone https://github.com/AppliedScientific/refusalbench
 cd refusalbench
+
+# Create and activate a virtual environment (recommended)
+python3 -m venv .venv
+source .venv/bin/activate   # Windows: .venv\Scripts\activate
+
 make install        # pip install -e ".[dev,stats]"
 make test           # 324 tests, all mock-driven — no API keys needed
 ```
@@ -20,7 +25,7 @@ make test           # 324 tests, all mock-driven — no API keys needed
 A 5-minute end-to-end demo using mock providers and mock judges:
 
 ```bash
-python scripts/run_pilot_categorization.py
+python3 scripts/run_pilot_categorization.py --demo
 ```
 
 ---
@@ -48,7 +53,6 @@ refusalbench/
 │   ├── pilot/                  Pilot council outputs (pilot categorization CSVs)
 │   ├── pretest/                Pre-test sweep CSVs (sonnet-4-6, opus-4-7)
 │   ├── should_refuse/          Should-refuse positive-control public manifests
-│   ├── qc/                     QC council audit outputs
 │   └── figures/                Generated paper figures (PDF/PNG)
 ├── src/refusalbench/
 │   ├── prompts.py              Prompt loader and validator
@@ -126,8 +130,8 @@ print(stats.h5_capability_correlation(df, meta)) # capability vs refusal
 To run a new snapshot against the same prompt set with updated or additional models:
 
 ```bash
-python scripts/run_sweep_all.py --label 2026-08 --models benchmark/config/sweep_models.json
-python scripts/run_council.py   --snapshot results/snapshots/2026-08/
+python3 scripts/run_sweep_all.py --label 2026-08 --models benchmark/config/sweep_models.json
+python3 scripts/run_council.py   --snapshot results/snapshots/2026-08/
 ```
 
 See [`docs/methodology.md`](docs/methodology.md) for the complete evaluation methodology and [`DEVELOPER.md`](DEVELOPER.md) for the full architecture and contributor guide.
