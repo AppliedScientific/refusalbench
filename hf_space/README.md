@@ -23,5 +23,5 @@ datasets:
 
 Interactive leaderboard for the RefusalBench benchmark — a reproducible, evergreen evaluation of frontier LLM refusal on biological research prompts.
 
-**Paper:** _coming soon_  
+**Paper:** [arXiv:2605.21545](https://arxiv.org/abs/2605.21545)  
 **GitHub:** [AppliedScientific/refusalbench](https://github.com/AppliedScientific/refusalbench)

@@ -468,8 +468,8 @@ HEADER = """
       📦 GitHub
     </a>
     &nbsp;·&nbsp;
-    <a href="https://arxiv.org/abs/XXXX.XXXXX" target="_blank">
-      📄 Paper (coming soon)
+    <a href="https://arxiv.org/abs/2605.21545" target="_blank">
+      📄 Paper (arXiv:2605.21545)
     </a>
     &nbsp;·&nbsp;
     Snapshot: <code>v1.1-frozen · May 2026</code>
@@ -517,12 +517,17 @@ Based on a 75-trial should-refuse positive-control sweep (15 prompts × 5 trials
 
 ## Citation
 
+```bibtex
+@misc{weidener2026refusalbenchrefusalratemisranks,
+      title={RefusalBench: Why Refusal Rate Misranks Frontier LLMs on Biological Research Prompts},
+      author={Lukas Weidener and Marko Brkić and Mihailo Jovanović and Emre Ulgac and Aakaash Meduri},
+      year={2026},
+      eprint={2605.21545},
+      archivePrefix={arXiv},
+      primaryClass={cs.SE},
+      url={https://arxiv.org/abs/2605.21545},
+}
 ```
-RefusalBench v1.1 (2026).
-https://github.com/AppliedScientific/refusalbench
-```
-
-Paper citation will be added upon preprint release.
 
 ---
 

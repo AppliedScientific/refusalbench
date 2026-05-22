@@ -1,24 +1,30 @@
 cff-version: 1.2.0
-message: "If you use RefusalBench in your research, please cite it as below."
+message: "If you use RefusalBench in your research, please cite the paper below."
 type: software
-title: "RefusalBench: A Reproducible, Evergreen Benchmark for LLM Refusal on Biological Research Prompts"
+title: "RefusalBench: Why Refusal Rate Misranks Frontier LLMs on Biological Research Prompts"
 version: "1.1.0"
 date-released: "2026-05-21"
 license: MIT
 repository-code: "https://github.com/AppliedScientific/refusalbench"
-url: "https://github.com/AppliedScientific/refusalbench"
-abstract: >-
-  RefusalBench is a modular, reproducible, evergreen benchmark for tracking
-  frontier LLM refusal on biological research prompts across successive model
-  generations. It evaluates 19 frontier models on 141 matched-triple prompts
-  spanning eight protein-design subdomains and three biological risk tiers
-  (benign / borderline / dual-use), using a three-judge AI council to classify
-  each response on a five-class compliance ladder. The v1.1-frozen snapshot
-  contains 13,389 adjudicated trials and can be fully reproduced without API
-  keys from the committed data.
+url: "https://arxiv.org/abs/2605.21545"
+identifiers:
+  - type: url
+    value: "https://arxiv.org/abs/2605.21545"
+    description: "arXiv preprint"
+  - type: other
+    value: "arXiv:2605.21545"
+    description: "arXiv identifier"
 authors:
-  - name: "Applied Scientific"
-    website: "https://github.com/AppliedScientific"
+  - family-names: "Weidener"
+    given-names: "Lukas"
+  - family-names: "Brkić"
+    given-names: "Marko"
+  - family-names: "Jovanović"
+    given-names: "Mihailo"
+  - family-names: "Ulgac"
+    given-names: "Emre"
+  - family-names: "Meduri"
+    given-names: "Aakaash"
 keywords:
   - benchmark
   - refusal
@@ -28,3 +34,20 @@ keywords:
   - ai-safety
   - biosecurity
   - large-language-models
+preferred-citation:
+  type: article
+  title: "RefusalBench: Why Refusal Rate Misranks Frontier LLMs on Biological Research Prompts"
+  authors:
+    - family-names: "Weidener"
+      given-names: "Lukas"
+    - family-names: "Brkić"
+      given-names: "Marko"
+    - family-names: "Jovanović"
+      given-names: "Mihailo"
+    - family-names: "Ulgac"
+      given-names: "Emre"
+    - family-names: "Meduri"
+      given-names: "Aakaash"
+  year: 2026
+  url: "https://arxiv.org/abs/2605.21545"
+  repository-code: "https://github.com/AppliedScientific/refusalbench"

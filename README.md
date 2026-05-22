@@ -5,7 +5,7 @@
 [![CI](https://github.com/AppliedScientific/refusalbench/actions/workflows/ci.yml/badge.svg)](https://github.com/AppliedScientific/refusalbench/actions/workflows/ci.yml)
 [![HF Space](https://img.shields.io/badge/%F0%9F%A4%97%20Space-RefusalBench-blue)](https://huggingface.co/spaces/AppliedScientific/refusalbench)
 [![Dataset](https://img.shields.io/badge/%F0%9F%A4%97%20Dataset-refusalbench-blue)](https://huggingface.co/datasets/AppliedScientific/refusalbench)
-[![Paper](https://img.shields.io/badge/paper-coming%20soon-b31b1b.svg)](#citation)
+[![arXiv](https://img.shields.io/badge/arXiv-2605.21545-b31b1b.svg)](https://arxiv.org/abs/2605.21545)
 
 **RefusalBench** is a modular, reproducible, evergreen benchmark for tracking frontier LLM refusal on biological research prompts across successive model generations. It evaluates 19 frontier models on 141 matched-triple prompts spanning eight protein-design subdomains and three biological risk tiers (benign / borderline / dual-use), using a three-judge AI council to classify each response on a five-class compliance ladder.
 
@@ -168,15 +168,13 @@ Contributions are welcome — new models, updated snapshots, bug fixes, and docu
 If you use RefusalBench in your research, please cite:
 
 ```bibtex
-@software{refusalbench2026,
-  title        = {{RefusalBench}: A Reproducible, Evergreen Benchmark for
-                  {LLM} Refusal on Biological Research Prompts},
-  author       = {{Applied Scientific}},
-  year         = {2026},
-  version      = {1.1.0},
-  url          = {https://github.com/AppliedScientific/refusalbench},
-  note         = {19 frontier models, 141 prompts, 13{,}389 adjudicated trials},
+@misc{weidener2026refusalbenchrefusalratemisranks,
+      title={RefusalBench: Why Refusal Rate Misranks Frontier LLMs on Biological Research Prompts},
+      author={Lukas Weidener and Marko Brkić and Mihailo Jovanović and Emre Ulgac and Aakaash Meduri},
+      year={2026},
+      eprint={2605.21545},
+      archivePrefix={arXiv},
+      primaryClass={cs.SE},
+      url={https://arxiv.org/abs/2605.21545},
 }
 ```
-
-> **Paper:** _coming soon_ — this README will be updated with the arXiv DOI on publication.
