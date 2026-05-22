@@ -554,7 +554,6 @@ with gr.Blocks(
     theme=gr.themes.Soft(
         primary_hue="red",
         secondary_hue="indigo",
-        font=[gr.themes.GoogleFont("Source Serif 4"), "serif"],
     ),
     title="RefusalBench",
     css="""
