@@ -191,6 +191,7 @@ def _rate_cell(rate: float, lo: float, hi: float) -> str:
 
 def build_leaderboard_html(
     stats: pd.DataFrame,
+    overall: pd.DataFrame,
     jur_filter: str = "All",
     sort_by: str = "Overall",
 ) -> str:
@@ -207,7 +208,6 @@ def build_leaderboard_html(
             }
         pivot[mid][row["tier"]] = (row["refusal_rate"], row["ci_lo"], row["ci_hi"], row["raw_rate"])
 
-    overall = overall_stats(stats)
     for _, row in overall.iterrows():
         if row["model_id"] in pivot:
             pivot[row["model_id"]]["overall"] = (
@@ -367,7 +367,7 @@ def make_fig3(stats: pd.DataFrame) -> plt.Figure:
     ax.set_xticks(x)
     ax.set_xticklabels(opus_labels, fontsize=10)
     ax.set_ylabel("Strict refusal rate")
-    ax.set_ylim(-0.05, 1.15)
+    ax.set_ylim(0, 1.15)
     ax.grid(axis="y", alpha=0.3)
     ax.legend(title="Tier", loc="center left", bbox_to_anchor=(1.01, 0.5))
     ax.set_title("Longitudinal refusal trajectory: Opus 4.5 / 4.6 / 4.7")
@@ -416,19 +416,18 @@ def make_fig5(stats: pd.DataFrame) -> plt.Figure:
 
 # ── Key stats banner ──────────────────────────────────────────────────────────
 
-def _stats_banner(stats: pd.DataFrame) -> str:
+def _stats_banner(stats: pd.DataFrame, overall: pd.DataFrame) -> str:
     n_models  = stats["model_id"].nunique()
     n_trials  = stats["n"].sum()
     n_prompts = 141  # fixed
-    ov = overall_stats(stats)
-    top_model = ov.iloc[0]["model"]
-    top_rate  = ov.iloc[0]["raw_rate"]
+    top_model = overall.iloc[0]["model"]
+    top_rate  = overall.iloc[0]["raw_rate"]
     return f"""
     <div style="display:flex;gap:16px;flex-wrap:wrap;margin-bottom:12px;">
       <div style="background:#FFF5F5;border:1px solid #FEB2B2;border-radius:8px;
                   padding:12px 18px;min-width:120px;text-align:center;">
         <div style="font-size:1.6em;font-weight:700;color:#C53030;">{n_models}</div>
-        <div style="font-size:0.82em;color:#744210;">frontier models</div>
+        <div style="font-size:0.82em;color:#744210;">models evaluated</div>
       </div>
       <div style="background:#F0FFF4;border:1px solid #9AE6B4;border-radius:8px;
                   padding:12px 18px;min-width:120px;text-align:center;">
@@ -455,7 +454,17 @@ def _stats_banner(stats: pd.DataFrame) -> str:
 
 # ── App ───────────────────────────────────────────────────────────────────────
 
-STATS = load_stats()
+try:
+    STATS = load_stats()
+except FileNotFoundError as exc:
+    raise SystemExit(
+        "[RefusalBench Space] data/adjudicated.csv not found.\n"
+        "Ensure the file is committed to the Space repository under data/."
+    ) from exc
+except Exception as exc:
+    raise SystemExit(f"[RefusalBench Space] Failed to load stats: {exc}") from exc
+
+OVERALL_STATS = overall_stats(STATS)  # pre-computed once; reused by leaderboard & banner
 
 HEADER = """
 <div style="text-align:center;padding:16px 0 8px;">
@@ -511,7 +520,7 @@ Based on a 75-trial should-refuse positive-control sweep (15 prompts × 5 trials
 - **Version:** v1.1-frozen (May 2026)
 - **Main sweep:** 18 frontier models + 1 control (Llama 3.3 70B†)
 - **v1.1 addition:** NVIDIA Nemotron 3 Super 120B (★)
-- **Data:** `results/snapshots/2026-05/council/adjudicated.csv` — compliance labels only; raw prompt text is not published.
+- **Data:** `data/adjudicated.csv` (bundled in this Space) — compliance labels only; raw prompt text is not published. Full snapshot in the [GitHub repo](https://github.com/AppliedScientific/refusalbench).
 
 ---
 
@@ -538,7 +547,7 @@ MIT — see [LICENSE](https://github.com/AppliedScientific/refusalbench/blob/mai
 
 
 def update_leaderboard(jur_filter: str, sort_by: str) -> str:
-    return build_leaderboard_html(STATS, jur_filter, sort_by)
+    return build_leaderboard_html(STATS, OVERALL_STATS, jur_filter, sort_by)
 
 
 with gr.Blocks(
@@ -555,7 +564,7 @@ with gr.Blocks(
 ) as demo:
 
     gr.HTML(HEADER)
-    gr.HTML(_stats_banner(STATS))
+    gr.HTML(_stats_banner(STATS, OVERALL_STATS))
 
     with gr.Tabs():
 
@@ -576,7 +585,7 @@ with gr.Blocks(
                 )
 
             leaderboard_html = gr.HTML(
-                value=build_leaderboard_html(STATS, "All", "Overall")
+                value=build_leaderboard_html(STATS, OVERALL_STATS, "All", "Overall")
             )
 
             jur_dd.change(
