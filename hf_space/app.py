@@ -180,21 +180,14 @@ _TIER_BADGE = {
 }
 
 
-def _rate_cell(rate: float, lo: float, hi: float) -> str:
-    pct = f"{rate:.1%}"
-    ci  = f"[{lo:.1%}, {hi:.1%}]"
-    return (
-        f'<span style="font-weight:600">{pct}</span>'
-        f'<br><span style="font-size:0.75em;color:#718096">{ci}</span>'
-    )
-
-
 def build_leaderboard_html(
     stats: pd.DataFrame,
     overall: pd.DataFrame,
     jur_filter: str = "All",
     sort_by: str = "Overall",
 ) -> str:
+
+    # ── pivot per-tier data keyed by model_id ─────────────────────────────────
     pivot: dict[str, dict] = {}
     for _, row in stats.iterrows():
         mid = row["model_id"]
@@ -216,78 +209,128 @@ def build_leaderboard_html(
 
     rows_data = list(pivot.values())
 
-    # Filter
+    # Filter & sort
     if jur_filter != "All":
         rows_data = [r for r in rows_data if r["jurisdiction"] == jur_filter]
 
-    # Sort
     sort_key = {
-        "Overall":      lambda r: r.get("overall",    (0,))[0],
-        "Benign":       lambda r: r.get("benign",     (0,))[0],
-        "Borderline":   lambda r: r.get("borderline", (0,))[0],
-        "Dual-use":     lambda r: r.get("dual_use",   (0,))[0],
+        "Overall":    lambda r: r.get("overall",    (0,))[0],
+        "Benign":     lambda r: r.get("benign",     (0,))[0],
+        "Borderline": lambda r: r.get("borderline", (0,))[0],
+        "Dual-use":   lambda r: r.get("dual_use",   (0,))[0],
     }.get(sort_by, lambda r: r.get("overall", (0,))[0])
     rows_data.sort(key=sort_key, reverse=True)
 
+    # ── cell renderer with heatmap tint ───────────────────────────────────────
+    def rate_cell(t: tuple | None, tier_color: str = "#3182CE") -> str:
+        if t is None:
+            return '<td style="text-align:center;padding:8px 10px;color:#CBD5E0;font-size:1em;">—</td>'
+        _rate, lo, hi, raw = t
+        alpha = raw * 0.18          # subtle blue tint scales with magnitude
+        bg = f"rgba(49,130,206,{alpha:.2f})"
+        bar_w = int(raw * 52)       # mini progress bar 0–52 px
+        bar = (
+            f'<div style="height:3px;width:{bar_w}px;background:{tier_color};'
+            f'border-radius:2px;margin:3px auto 0;opacity:0.55;"></div>'
+        )
+        return (
+            f'<td style="text-align:center;padding:8px 10px;background:{bg};vertical-align:middle;">'
+            f'<span style="font-weight:700;font-size:1.05em;">{raw:.0%}</span>'
+            f'<br><span style="font-size:0.70em;color:#718096;font-family:monospace;">'
+            f'[{lo:.0%}–{hi:.0%}]</span>'
+            f'{bar}</td>'
+        )
+
+    # ── intro blurb ───────────────────────────────────────────────────────────
+    intro = (
+        '<p style="font-size:0.83em;color:#4A5568;margin:0 0 10px 2px;line-height:1.5;">'
+        'Values show the <strong>strict refusal rate</strong> — fraction of trials where the model '
+        'gave a direct or indirect refusal — with Wilson 95&nbsp;% confidence interval below. '
+        'A mini bar visualises the magnitude. Models sorted by the selected tier column&nbsp;↓.'
+        '</p>'
+    )
+
+    # ── two-row header: spanning group label + per-tier sub-headers ───────────
     header = """
-    <table style="width:100%;border-collapse:collapse;font-family:serif;font-size:0.92em;">
+    <table style="width:100%;border-collapse:collapse;font-size:0.91em;">
       <thead>
-        <tr style="border-bottom:2px solid #E2E8F0;background:#F7FAFC;">
-          <th style="text-align:left;padding:8px 10px;">Model</th>
-          <th style="text-align:left;padding:8px 6px;">Org</th>
-          <th style="text-align:center;padding:8px 6px;">Jur.</th>
-          <th style="text-align:center;padding:8px 10px;">Benign</th>
-          <th style="text-align:center;padding:8px 10px;">Borderline</th>
-          <th style="text-align:center;padding:8px 10px;">Dual-use</th>
-          <th style="text-align:center;padding:8px 10px;">Overall</th>
-          <th style="text-align:center;padding:8px 8px;">PC&nbsp;Tier</th>
+        <tr style="background:#F7FAFC;">
+          <th style="padding:7px 6px;text-align:center;border-bottom:1px solid #E2E8F0;"
+              rowspan="2">#</th>
+          <th style="padding:7px 10px;text-align:left;border-bottom:1px solid #E2E8F0;"
+              rowspan="2">Model</th>
+          <th style="padding:7px 8px;text-align:left;border-bottom:1px solid #E2E8F0;"
+              rowspan="2">Org</th>
+          <th style="padding:7px 6px;text-align:center;border-bottom:1px solid #E2E8F0;"
+              rowspan="2">Jur.</th>
+          <th colspan="4"
+              style="padding:7px 10px;text-align:center;background:#EBF8FF;
+                     color:#2C5282;font-weight:700;letter-spacing:0.01em;
+                     border-bottom:2px solid #BEE3F8;border-top:1px solid #E2E8F0;">
+            Strict refusal rate &nbsp;·&nbsp; Wilson 95&nbsp;% CI
+          </th>
+          <th style="padding:7px 8px;text-align:center;border-bottom:1px solid #E2E8F0;"
+              rowspan="2">PC<br>Tier</th>
+        </tr>
+        <tr style="background:#F7FAFC;border-bottom:2px solid #E2E8F0;">
+          <th style="padding:6px 10px;text-align:center;color:#276749;font-weight:600;">
+            🟢 Benign</th>
+          <th style="padding:6px 10px;text-align:center;color:#C05621;font-weight:600;">
+            🟡 Borderline</th>
+          <th style="padding:6px 10px;text-align:center;color:#C53030;font-weight:600;">
+            🔴 Dual-use</th>
+          <th style="padding:6px 10px;text-align:center;color:#553C9A;font-weight:600;
+                     background:#FAF5FF;">
+            ◆ Overall</th>
         </tr>
       </thead>
       <tbody>
     """
 
+    tier_colors = {
+        "benign": "#38A169", "borderline": "#DD6B20",
+        "dual_use": "#E53E3E", "overall": "#805AD5",
+    }
+
     body = ""
     for i, r in enumerate(rows_data):
-        color = PROVIDER_COLORS.get(r["provider"], "#718096")
+        dot_color = PROVIDER_COLORS.get(r["provider"], "#718096")
         bg = "#FFFFFF" if i % 2 == 0 else "#F7FAFC"
         jur_flag = JURS.get(r["jurisdiction"], r["jurisdiction"])
         badge = _TIER_BADGE.get(r["pc_tier"], _TIER_BADGE["—"])
 
-        def cell(key: str) -> str:
-            t = r.get(key)
-            if t is None:
-                return '<td style="text-align:center;padding:7px 10px;color:#CBD5E0;">—</td>'
-            rate, lo, hi, raw = t
-            return f'<td style="text-align:center;padding:7px 10px;">{_rate_cell(raw, lo, hi)}</td>'
-
         body += f"""
         <tr style="background:{bg};border-bottom:1px solid #EDF2F7;">
-          <td style="padding:7px 10px;">
-            <span style="display:inline-block;width:10px;height:10px;border-radius:50%;
-                         background:{color};margin-right:6px;vertical-align:middle;"></span>
-            <strong>{r["model"]}</strong>
+          <td style="text-align:center;padding:8px 6px;color:#A0AEC0;
+                     font-size:0.85em;font-weight:500;">{i + 1}</td>
+          <td style="padding:8px 10px;white-space:nowrap;">
+            <span style="display:inline-block;width:9px;height:9px;border-radius:50%;
+                         background:{dot_color};margin-right:7px;vertical-align:middle;
+                         flex-shrink:0;"></span><strong>{r["model"]}</strong>
           </td>
-          <td style="padding:7px 6px;color:#4A5568;">{r["org"]}</td>
-          <td style="text-align:center;padding:7px 6px;">{jur_flag}</td>
-          {cell("benign")}
-          {cell("borderline")}
-          {cell("dual_use")}
-          {cell("overall")}
-          <td style="text-align:center;padding:7px 8px;">{badge}</td>
+          <td style="padding:8px 8px;color:#4A5568;font-size:0.88em;
+                     white-space:nowrap;">{r["org"]}</td>
+          <td style="text-align:center;padding:8px 6px;font-size:1.1em;">{jur_flag}</td>
+          {rate_cell(r.get("benign"),     tier_colors["benign"])}
+          {rate_cell(r.get("borderline"), tier_colors["borderline"])}
+          {rate_cell(r.get("dual_use"),   tier_colors["dual_use"])}
+          {rate_cell(r.get("overall"),    tier_colors["overall"])}
+          <td style="text-align:center;padding:8px 8px;">{badge}</td>
         </tr>"""
 
     footer = """
       </tbody>
     </table>
-    <p style="font-size:0.78em;color:#718096;margin-top:8px;">
-      Strict refusal = direct_refusal | indirect_refusal.
-      Wilson 95% CIs shown below each rate.
-      PC Tier = positive-control calibration tier (A ≥ 95% TPR, B 9–73% TPR on should-refuse set).
-      † Llama 3.3 70B Instruct is a non-frontier open-source control.
-      ★ NVIDIA Nemotron 3 Super 120B added in v1.1 panel expansion.
-    </p>
+    <div style="font-size:0.76em;color:#718096;margin-top:8px;line-height:1.6;
+                border-top:1px solid #EDF2F7;padding-top:6px;">
+      <strong>Strict refusal</strong> = direct_refusal + indirect_refusal out of all trials (3 tiers × 47 prompts × 5 trials).
+      &nbsp;·&nbsp; <strong>PC Tier</strong>: A ≥ 95 % TPR, B 9–73 % TPR on 75-trial should-refuse positive-control sweep; — = gap zone.
+      &nbsp;·&nbsp; <strong>Benign</strong> high refusal = over-refusal on safe prompts.
+      &nbsp;·&nbsp; † Llama 3.3 70B = non-frontier open-source control.
+      &nbsp;·&nbsp; ★ Nemotron added v1.1.
+    </div>
     """
-    return header + body + footer
+    return intro + header + body + footer
 
 
 # ── Figures ───────────────────────────────────────────────────────────────────
