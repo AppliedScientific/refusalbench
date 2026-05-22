@@ -11,6 +11,10 @@
 
 The v1.0 prompt set and the inaugural May 2026 snapshot (13,389 adjudicated rows across 19 models, v1.1-frozen) are fully committed to this repository. All statistical analyses can be re-run without API keys from the committed data.
 
+> 🤗 **Interactive leaderboard:** Explore the v1.1-frozen results without cloning anything — the [HuggingFace Space](https://huggingface.co/spaces/appliedscientific/refusalbench) hosts the leaderboard, a calibration scatter showing the headline finding, and the per-model TPR breakdown.
+>
+> 🤗 **Dataset:** The trial-level compliance labels are also on the [Hub](https://huggingface.co/datasets/appliedscientific/refusalbench) — `load_dataset("appliedscientific/refusalbench")`.
+
 ---
 
 ## Quickstart
