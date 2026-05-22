@@ -16,7 +16,7 @@ tags:
   - refusal
   - leaderboard
 datasets:
-  - AppliedScientific/refusalbench
+  - appliedscientific/refusalbench
 ---
 
 # RefusalBench

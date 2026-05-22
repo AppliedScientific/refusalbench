@@ -16,7 +16,7 @@ import os
 import sys
 from pathlib import Path
 
-REPO_ID   = "AppliedScientific/refusalbench"
+REPO_ID   = "appliedscientific/refusalbench"
 SPACE_DIR = Path(__file__).parent.parent / "hf_space"
 COMMIT_MSG = "Deploy RefusalBench leaderboard (v1.1-frozen, arXiv:2605.21545)"
 
