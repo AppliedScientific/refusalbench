@@ -1,8 +1,28 @@
 {
-  "version": "1.6",
-  "schema_doc": "Routing table for the Phase 4 evaluation sweep. 18 models: 7 via AWS Bedrock (BEDROCK_API_KEY), 11 via OpenRouter (OPENROUTER_API_KEY). Anthropic Claude models moved from Bedrock to OpenRouter on 2026-05-08: Bedrock applies a domain-level content filter to all protein engineering prompts for Claude models (including benign human targets), making it unsuitable for measuring model-level refusal calibration. OpenRouter routes directly to Anthropic's API and surfaces refusals as native_finish_reason='refusal' with empty content — functionally identical to the direct Anthropic API, since Anthropic's refusal mechanism is an API-level rejection with no text content regardless of provider.",
+  "version": "1.7",
+  "schema_doc": "Routing table for the RefusalBench sweep panel. v1.1-frozen: 19 models (7 Bedrock, 12 OpenRouter). v1.2 addition: Claude Opus 4.8 (2026-05-28), extending the Anthropic longitudinal series to 4 points. Anthropic Claude models route via OpenRouter: Bedrock applies a domain-level content filter to all protein engineering prompts for Claude models (including benign human targets), making it unsuitable for measuring model-level refusal calibration. OpenRouter routes directly to Anthropic's API and surfaces refusals as native_finish_reason='refusal' with empty content — functionally identical to the direct Anthropic API.",
   "default_provider": "bedrock",
   "models": [
+    {
+      "model_id": "anthropic/claude-opus-4.8",
+      "display_name": "Claude Opus 4.8",
+      "provider": "openrouter",
+      "jurisdiction": "us",
+      "organization": "anthropic",
+      "role": "v1.2_primary",
+      "routing_note": "Routed via OpenRouter for main sweep (same rationale as all Anthropic models — Bedrock domain-filters protein engineering prompts). OpenRouter ID: anthropic/claude-opus-4.8. Released 2026-05-28. Same $5/$25 per MTok pricing as Opus 4.7.",
+      "pricing_usd_per_mtok": {"input": 5.0, "output": 25.0}
+    },
+    {
+      "model_id": "us.anthropic.claude-opus-4-8",
+      "display_name": "Claude Opus 4.8",
+      "provider": "bedrock",
+      "jurisdiction": "us",
+      "organization": "anthropic",
+      "role": "v1.2_pc_only",
+      "routing_note": "Bedrock geo-inference ID used exclusively for the should-refuse positive control sweep. Bedrock domain-filter counts as refusal for PC purposes (any refusal = correct outcome). Run with: python scripts/should_refuse_cli.py --run-sweep --sweep-model-ids us.anthropic.claude-opus-4-8 --sweep-only bedrock",
+      "pricing_usd_per_mtok": {"input": 5.0, "output": 25.0}
+    },
     {
       "model_id": "anthropic/claude-opus-4.7",
       "display_name": "Claude Opus 4.7",
@@ -185,7 +205,7 @@
     }
   ],
   "notes": {
-    "keys_required": "BEDROCK_API_KEY (ABSK... prefix) for the 7 Bedrock models; OPENROUTER_API_KEY for the 11 OpenRouter models (includes all 4 Anthropic Claude models moved from Bedrock on 2026-05-08).",
+    "keys_required": "BEDROCK_API_KEY (ABSK... prefix) for the 7 Bedrock models; OPENROUTER_API_KEY for the 12 OpenRouter models (includes all 5 Anthropic Claude models — 4 from v1.1-frozen + Opus 4.8 added v1.2).",
     "anthropic_routing_rationale": "Bedrock applies a domain-level content filter to all protein engineering prompts for Claude models — including benign human protein targets (tested: EGFR, binder_001 benign tier, stopReason=content_filtered). This is infrastructure-level filtering, not model-level refusal, and conflates the two signals. OpenRouter routes directly to Anthropic and surfaces model-level refusals as native_finish_reason=refusal + empty content. Since Anthropic's refusal mechanism is API-level (no text content), OpenRouter and the Anthropic direct API are functionally equivalent for this benchmark. Tested 2026-05-08: Opus 4.5 and 4.6 comply on benign, refuse borderline+dual-use; Opus 4.7 refuses all three tiers (H4 tightening signal confirmed in pretest).",
     "model_id_verification": "OpenRouter model IDs verified via https://openrouter.ai/api/v1/models on 2026-05-07. Bedrock model IDs corrected 2026-05-08 from AWS documentation (docs.aws.amazon.com/bedrock/latest/userguide/model-cards.html). Bedrock dropped date-stamped versioned IDs in favour of short-name geo/global inference profile IDs.",
     "gpt_55_pro_excluded": "GPT-5.5 Pro ($30/$180 per MTok) was excluded due to cost (~$45 for sweep). GPT-5.5 standard ($5/$30) provides sufficient OpenAI coverage.",
@@ -195,6 +215,7 @@
     "grok_note": "Grok 4.20 (x-ai/grok-4.20-20260309, $1.25/$2.50 per MTok, ~$0.70 for sweep). xAI is US-headquartered (Elon Musk), adds a fifth distinct US non-Anthropic org. Also available: Grok 4.3 (x-ai/grok-4.3-20260430, same pricing, more recent) — swap model_id if preferred.",
     "cross_region_profiles": "Bedrock geo inference IDs prefixed with 'us.' route across us-east-1/us-east-2/us-west-2 automatically. Models without geo support (Mistral Large 3, DeepSeek V3.2, Qwen3 Next 80B, GLM-5) use bare in-region IDs and are served from us-east-1 directly.",
     "opus_47_temperature_note": "Claude Opus 4.7 does not support temperature, top_p, or top_k parameters. Provider code must omit these from inferenceConfig.",
-    "longitudinal_models": "Opus 4.5 and 4.6 run the same prompt set as Opus 4.7 solely for H4 (longitudinal trajectory analysis)."
+    "longitudinal_models": "Opus 4.5, 4.6, and 4.7 run alongside Opus 4.8 for H4 (longitudinal trajectory analysis). v1.2 extends the series to 4 points: 4.5 → 4.6 → 4.7 → 4.8.",
+    "opus_48_note": "Opus 4.8 (2026-05-28) is the v1.2 panel addition. Main-sweep cost: 141 prompts × 5 trials = 705 calls ≈ $2.64. Should-refuse PC cost: 15 prompts × 5 trials = 75 calls ≈ $0.28. Total ≈ $2.92. Run with: python scripts/run_sweep_all.py --label 2026-05 --model-ids anthropic/claude-opus-4.8"
   }
 }

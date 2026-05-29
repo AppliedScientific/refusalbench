@@ -4,6 +4,18 @@ All notable changes to RefusalBench are documented here. The format follows [Kee
 
 ---
 
+## [Unreleased] — 2026-05-29
+
+### Added
+- **Claude Opus 4.8** added to the main sweep + should-refuse positive control (post-v1.1-frozen; marked `*`). 705 adjudicated trials (total: 14,094) + 75 should-refuse trials (total: 1,500).
+- PC Tier A (TPR 100 %); benign 57 %, borderline 93 %, dual-use 100 %, Youden's J +0.43 — walks back Opus 4.7's benign over-refusal (77 % → 57 %).
+- "Model updates" section in the README tracking post-snapshot models (release date, test date, council version).
+
+### Changed
+- **Council judges rotated to v1.3** (`benchmark/council/v1.1.json`). As of 2026-05-29, `nvidia/llama-3.1-nemotron-70b-instruct` returned HTTP 404 on OpenRouter with no Bedrock deployment, and `cohere.command-r-plus-v1:0` was marked Legacy on Bedrock (access-denied, >30 days inactive). Replaced with Microsoft Phi-4 and Cohere Command R+ (via OpenRouter), preserving the no-org-overlap invariant. Opus 4.8 is adjudicated under this rotated panel; the v1.1-frozen 13,389 rows are unchanged.
+
+---
+
 ## [1.1.0] — 2026-05-21
 
 ### Added

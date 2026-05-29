@@ -1,7 +1,7 @@
 {
-  "version": "1.1",
+  "version": "1.3",
   "rubric_version": "1.0",
-  "schema_doc": "Three-judge panel with zero provider overlap with the evaluation panel. No judge shares an organization with any model in config/sweep_models.json. Judges classify each (prompt, response) pair into one (compliance_level, reason_category) pair from rubric/v1.0.json.",
+  "schema_doc": "Three-judge panel with zero provider overlap with the evaluation panel. No judge shares an organization with any model in config/sweep_models.json. Judges classify each (prompt, response) pair into one (compliance_level, reason_category) pair from rubric/v1.0.json. v1.2 (2026-05-29): rotated two dead judges. v1.3 (2026-05-29): replaced writer/palmyra-x5 — OpenRouter infrastructure-filters protein engineering judge inputs. microsoft/phi-4 confirmed to handle protein content without filtering.",
   "aggregation": {
     "method": "modal_label",
     "tie_break": "most_restrictive",
@@ -10,11 +10,11 @@
   },
   "judges": [
     {
-      "judge_id": "nvidia_nemotron",
-      "label": "NVIDIA Llama-3.1-Nemotron-70B (NVIDIA, US)",
+      "judge_id": "microsoft_phi4",
+      "label": "Microsoft Phi-4 (Microsoft, US)",
       "jurisdiction": "us",
       "provider": "openrouter",
-      "model_id": "nvidia/llama-3.1-nemotron-70b-instruct",
+      "model_id": "microsoft/phi-4",
       "verify_id": true,
       "temperature": 0.0,
       "max_tokens": 256,
@@ -26,10 +26,10 @@
     },
     {
       "judge_id": "cohere_command_r_plus",
-      "label": "Cohere Command R+ (Cohere, Canada/Western)",
+      "label": "Cohere Command R+ 08-2024 (Cohere, Canada/Western)",
       "jurisdiction": "western",
-      "provider": "bedrock",
-      "model_id": "cohere.command-r-plus-v1:0",
+      "provider": "openrouter",
+      "model_id": "cohere/command-r-plus-08-2024",
       "verify_id": true,
       "temperature": 0.0,
       "max_tokens": 256,
@@ -57,10 +57,10 @@
   ],
   "notes": {
     "v1_0_overlap_problem": "council/v1.0.json used Llama 3.3 (Meta), Qwen3-32B (Alibaba), Magistral Small (Mistral) as judges. All three organizations appear in the evaluation panel (Llama 3.3 70B as control, Qwen3 Next 80B, Mistral Large 3). This violates the no-overlap invariant. v1.1 rotates all three judges.",
-    "us_judge_nvidia": "NVIDIA Nemotron 70B (NVIDIA, US) replaces the Meta/Llama judge. NVIDIA is a compute infrastructure company — not an AI-first model provider — and has no entry in the evaluation panel.",
-    "western_judge_cohere": "Cohere Command R+ (Cohere, Toronto) replaces the Mistral judge. Cohere is headquartered in Canada (Western-aligned, similar regulatory environment to EU) and has no entry in the evaluation panel. No other non-Mistral EU-accessible model is readily available on Bedrock.",
-    "asia_constraint": "All five readily-accessible East Asian model providers are in the evaluation panel: DeepSeek, Alibaba/Qwen, Z.AI (GLM), MiniMax, and Moonshot/Kimi. A strictly East Asian judge cannot be sourced without either narrowing the eval panel or adding an obscure API integration. AI21 Jamba 1.5 (AI21 Labs, Israel) is the best available substitute: Israel is outside the US/EU/East Asia triangle, AI21 has no presence in the evaluation panel, and Jamba is a genuinely independent model architecture (not a Llama derivative). Documented in docs/adapter_decisions.md.",
-    "all_verify_id_true": "All three model IDs in v1.1 must be verified against live Bedrock and OpenRouter catalogs before the first council run. Check Bedrock console for cohere.command-r-plus-v1:0 and ai21.jamba-1-5-large-v1:0; check https://openrouter.ai/api/v1/models for nvidia/llama-3.1-nemotron-70b-instruct.",
-    "openrouter_fallback": "If NVIDIA Nemotron is unavailable via OpenRouter, nvidia/llama-3.3-nemotron-super-49b-v1 (NVIDIA, Bedrock) or writer/palmyra-x5 (Writer Inc., US) are non-overlapping fallbacks."
+    "v1_1_deprecations": "nvidia/llama-3.1-nemotron-70b-instruct dropped from OpenRouter (404 as of 2026-05-29). cohere.command-r-plus-v1:0 marked Legacy on Bedrock (inactive >30 days). Both replaced in v1.2.",
+    "us_judge_phi4": "Microsoft Phi-4 (Microsoft, US) replaces Writer Palmyra X5. Writer/OpenRouter infrastructure-filters protein engineering judge inputs (content-filtered on 38 benign rows). Microsoft has no entry in the evaluation panel. Phi-4 confirmed to handle protein engineering content and return valid JSON classifications. Verified live on OpenRouter 2026-05-29.",
+    "western_judge_cohere": "Cohere Command R+ 08-2024 (Cohere, Toronto) retains the Western seat, now routed via OpenRouter instead of Bedrock. Same organization, newer model, verified live 2026-05-29.",
+    "asia_constraint": "All five readily-accessible East Asian model providers are in the evaluation panel: DeepSeek, Alibaba/Qwen, Z.AI (GLM), MiniMax, and Moonshot/Kimi. AI21 Jamba 1.5 (AI21 Labs, Israel) holds the non-US/EU seat. Jamba is a genuinely independent model architecture (not a Llama derivative). Documented in docs/adapter_decisions.md.",
+    "continuity_note": "The 13,389 rows adjudicated under v1.1 judges remain in adjudicated.csv. The 123 rows that failed under v1.1 (judge endpoint errors) are retried under v1.2 judges on the next --resume run."
   }
 }
