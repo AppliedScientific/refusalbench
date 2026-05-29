@@ -17,6 +17,20 @@ The v1.0 prompt set and the inaugural May 2026 snapshot (13,389 adjudicated rows
 
 ---
 
+## Model updates
+
+Models evaluated after the v1.1-frozen snapshot are appended to the committed data and tracked here. Post-snapshot additions are marked with `*` on the leaderboard and in the dataset, and may be adjudicated under a rotated judge panel (see note below).
+
+| Model | Provider | Released | Tested | Council | Snapshot | Headline |
+|---|---|---|---|---|---|---|
+| **Claude Opus 4.8** \* | Anthropic | late May 2026 | 2026-05-29 | **v1.3** (rotated) | post-v1.1 | PC Tier A (TPR 100 %); benign 57 %, dual-use 100 %, Youden's J **+0.43** |
+
+The v1.1-frozen panel (18 frontier models + Llama 3.3 70B control + NVIDIA Nemotron 3 Super 120B, all under the v1.1 council) remains the canonical snapshot referenced in the manuscript. Opus 4.8 walks back Opus 4.7's benign over-refusal (77 % → 57 %), recovering discrimination (Youden's J +0.23 → +0.43) while holding dual-use refusal at 100 %.
+
+> **\* Rotated v1.3 council.** Claude Opus 4.8 was adjudicated under a rotated three-judge panel (Microsoft Phi-4 + Cohere Command R+ via OpenRouter + AI21 Jamba), **not** the original v1.1 panel (NVIDIA Nemotron + Cohere via Bedrock + AI21 Jamba). As of 2026-05-29, `nvidia/llama-3.1-nemotron-70b-instruct` was no longer available on OpenRouter (HTTP 404, no endpoints found) and had no corresponding Bedrock deployment; `cohere.command-r-plus-v1:0` was marked Legacy on Bedrock and access-denied due to >30 days inactivity. Both judges were replaced with verified-live alternatives maintaining the no-org-overlap invariant. Two of three judges differ from the original panel, so cross-panel comparisons should be read with that caveat (mean inter-judge agreement is comparable: 0.955 vs 0.975). Full judge history is documented in [`benchmark/council/v1.1.json`](benchmark/council/v1.1.json).
+
+---
+
 ## Quickstart
 
 ```bash

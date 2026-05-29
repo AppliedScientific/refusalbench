@@ -20,6 +20,12 @@
           "model_id": "us.anthropic.claude-opus-4-7-20250514-v1:0",
           "display_name": "Claude Opus 4.7",
           "release_date": "2025-05-14"
+        },
+        {
+          "model_id": "anthropic/claude-opus-4.8",
+          "display_name": "Claude Opus 4.8",
+          "release_date": "2026-05-28",
+          "routing_note": "Routed via OpenRouter. Bedrock ref ID: us.anthropic.claude-opus-4-8"
         }
       ]
     },
