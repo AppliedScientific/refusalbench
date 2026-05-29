@@ -40,3 +40,28 @@ jobs:
 
       - name: Validate prompts
         run: python scripts/validate_prompts.py
+
+  # Guards the bug from issues #3/#4. The `test` job installs with extras, so it
+  # would not catch a *plain* `pip install -e .` (what end users and `make`
+  # reporters run) regressing. This job does a bare install in an isolated env
+  # and then imports the [project] runtime dependencies — on setuptools <77 the
+  # old misplaced-deps bug installed nothing yet succeeded silently, so building
+  # alone is not enough; the imports prove the deps were actually pulled in.
+  base-install:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Bare editable install (no extras)
+        run: |
+          python -m pip install --upgrade pip
+          pip install -e .
+
+      - name: Verify runtime dependencies were installed
+        run: python -c "import pandas, scipy, matplotlib, click, krippendorff, refusalbench"
