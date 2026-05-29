@@ -87,9 +87,7 @@ branch = true
 omit = [
     # CLI entrypoint glue; exercised by pilot scripts not unit tests.
     "src/refusalbench/scripts_entry.py",
-    # Provider clients require live API credentials, so they are excluded from
-    # coverage measurement (see the [tool.coverage.report] note below — this is
-    # the exclusion that the 78% threshold assumes).
+    # Provider clients need live API creds — excluded per the report note below.
     "src/refusalbench/providers/anthropic.py",
     "src/refusalbench/providers/bedrock.py",
     "src/refusalbench/providers/openrouter.py",

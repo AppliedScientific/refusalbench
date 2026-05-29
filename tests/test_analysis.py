@@ -38,9 +38,7 @@ def subdomain_df() -> pd.DataFrame:
 
 @pytest.fixture()
 def opus_df() -> pd.DataFrame:
-    # figure3_opus_longitudinal draws one line per tier across the Opus
-    # releases, so the frame must carry a `tier` column (matching the shape
-    # _compute_stats emits in production).
+    # figure3 draws one line per tier, so the frame needs a `tier` column.
     rows = []
     for model in ("Opus 4.5", "Opus 4.6", "Opus 4.7"):
         for tier in ("benign", "borderline", "dual_use"):
