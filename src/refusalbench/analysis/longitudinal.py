@@ -226,10 +226,7 @@ def cochran_q_across_snapshots(
         raise ValueError("Cochran's Q requires at least 3 snapshots.")
     if lineage_config is None:
         lineage_config = (
-            Path(__file__).resolve().parents[3]
-            / "benchmark"
-            / "config"
-            / "model_lineage.json"
+            Path(__file__).resolve().parents[3] / "benchmark" / "config" / "model_lineage.json"
         )
 
     frames = []

@@ -40,46 +40,46 @@ mpl.rcParams.update(
 # ---------------------------------------------------------------------------
 _PROVIDER_COLORS: dict[str, str] = {
     "anthropic": "#E53E3E",  # red
-    "openai":    "#38A169",  # green
-    "google":    "#3182CE",  # blue
-    "amazon":    "#DD6B20",  # orange
-    "meta":      "#805AD5",  # purple
-    "mistral":   "#2B6CB0",  # darker blue
-    "deepseek":  "#2C7A7B",  # teal
-    "qwen":      "#D69E2E",  # gold
-    "zai":       "#319795",  # teal-green
-    "xai":       "#4A5568",  # dark slate
-    "moonshot":  "#D53F8C",  # pink
-    "minimax":   "#6B46C1",  # deep purple
-    "nvidia":    "#76B900",  # NVIDIA green
+    "openai": "#38A169",  # green
+    "google": "#3182CE",  # blue
+    "amazon": "#DD6B20",  # orange
+    "meta": "#805AD5",  # purple
+    "mistral": "#2B6CB0",  # darker blue
+    "deepseek": "#2C7A7B",  # teal
+    "qwen": "#D69E2E",  # gold
+    "zai": "#319795",  # teal-green
+    "xai": "#4A5568",  # dark slate
+    "moonshot": "#D53F8C",  # pink
+    "minimax": "#6B46C1",  # deep purple
+    "nvidia": "#76B900",  # NVIDIA green
     # legacy aliases
-    "zhipu":     "#319795",
-    "other":     "#718096",  # gray
+    "zhipu": "#319795",
+    "other": "#718096",  # gray
 }
 
 # ---------------------------------------------------------------------------
 # Model-ID → (short display name, provider) — keyed on adjudicated.csv values
 # ---------------------------------------------------------------------------
 _MODEL_META: dict[str, tuple[str, str]] = {
-    "anthropic/claude-opus-4.7":              ("Opus 4.7",          "anthropic"),
-    "anthropic/claude-opus-4.6":              ("Opus 4.6",          "anthropic"),
-    "anthropic/claude-opus-4.5":              ("Opus 4.5",          "anthropic"),
-    "anthropic/claude-sonnet-4.6":            ("Sonnet 4.6",        "anthropic"),
-    "openai/gpt-5.5-20260423":                ("GPT-5.5",           "openai"),
-    "openai/gpt-5.4-mini-20260317":           ("GPT-5.4 Mini",      "openai"),
-    "google/gemini-3.1-pro-preview-20260219": ("Gemini 3.1 Pro",    "google"),
-    "google/gemini-3.1-flash-lite-20260507":  ("Gemini Flash Lite", "google"),
-    "x-ai/grok-4.20-20260309":                ("Grok 4.20",         "xai"),
-    "moonshotai/kimi-k2.6-20260420":          ("Kimi K2.6",         "moonshot"),
-    "minimax/minimax-m2.7-20260318":          ("MiniMax M2.7",      "minimax"),
-    "us.amazon.nova-pro-v1:0":                ("Nova Pro",          "amazon"),
-    "us.meta.llama3-3-70b-instruct-v1:0":     ("Llama 3.3 70B",     "meta"),
-    "mistral.mistral-large-3-675b-instruct":  ("Mistral Large 3",   "mistral"),
-    "deepseek.v3.2":                          ("DeepSeek V3.2",     "deepseek"),
-    "us.deepseek.r1-v1:0":                    ("DeepSeek R1",       "deepseek"),
-    "qwen.qwen3-next-80b-a3b":                ("Qwen3 80B",         "qwen"),
-    "zai.glm-5":                              ("GLM-5",             "zai"),
-    "nvidia.nemotron-super-3-120b":           ("Nemotron 120B",     "nvidia"),
+    "anthropic/claude-opus-4.7": ("Opus 4.7", "anthropic"),
+    "anthropic/claude-opus-4.6": ("Opus 4.6", "anthropic"),
+    "anthropic/claude-opus-4.5": ("Opus 4.5", "anthropic"),
+    "anthropic/claude-sonnet-4.6": ("Sonnet 4.6", "anthropic"),
+    "openai/gpt-5.5-20260423": ("GPT-5.5", "openai"),
+    "openai/gpt-5.4-mini-20260317": ("GPT-5.4 Mini", "openai"),
+    "google/gemini-3.1-pro-preview-20260219": ("Gemini 3.1 Pro", "google"),
+    "google/gemini-3.1-flash-lite-20260507": ("Gemini Flash Lite", "google"),
+    "x-ai/grok-4.20-20260309": ("Grok 4.20", "xai"),
+    "moonshotai/kimi-k2.6-20260420": ("Kimi K2.6", "moonshot"),
+    "minimax/minimax-m2.7-20260318": ("MiniMax M2.7", "minimax"),
+    "us.amazon.nova-pro-v1:0": ("Nova Pro", "amazon"),
+    "us.meta.llama3-3-70b-instruct-v1:0": ("Llama 3.3 70B", "meta"),
+    "mistral.mistral-large-3-675b-instruct": ("Mistral Large 3", "mistral"),
+    "deepseek.v3.2": ("DeepSeek V3.2", "deepseek"),
+    "us.deepseek.r1-v1:0": ("DeepSeek R1", "deepseek"),
+    "qwen.qwen3-next-80b-a3b": ("Qwen3 80B", "qwen"),
+    "zai.glm-5": ("GLM-5", "zai"),
+    "nvidia.nemotron-super-3-120b": ("Nemotron 120B", "nvidia"),
 }
 
 _FIGURE_DIR = Path(__file__).resolve().parent.parent.parent.parent / "results" / "figures"
@@ -87,9 +87,9 @@ _FIGURE_DIR = Path(__file__).resolve().parent.parent.parent.parent / "results" /
 # Tier display ordering
 _TIERS = ["benign", "borderline", "dual_use"]
 _TIER_COLORS = {
-    "benign":     "#68D391",  # green
+    "benign": "#68D391",  # green
     "borderline": "#F6AD55",  # amber
-    "dual_use":   "#FC8181",  # red
+    "dual_use": "#FC8181",  # red
 }
 _TIER_LABELS = {
     "benign": "Benign",
@@ -101,6 +101,7 @@ _TIER_LABELS = {
 # ---------------------------------------------------------------------------
 # Helpers
 # ---------------------------------------------------------------------------
+
 
 def _provider_color(provider: str) -> str:
     return _PROVIDER_COLORS.get(provider.lower(), _PROVIDER_COLORS["other"])
@@ -136,20 +137,12 @@ def _compute_stats(df: pd.DataFrame) -> pd.DataFrame:
         model, provider, tier, n, n_refused, refusal_rate, ci_lo, ci_hi
     """
     df = df.copy()
-    df["display"] = df["model"].map(
-        lambda m: _MODEL_META.get(m, (m, "other"))[0]
-    )
-    df["provider"] = df["model"].map(
-        lambda m: _MODEL_META.get(m, (m, "other"))[1]
-    )
-    df["is_refused"] = df["modal_compliance"].isin(
-        ["direct_refusal", "indirect_refusal"]
-    )
+    df["display"] = df["model"].map(lambda m: _MODEL_META.get(m, (m, "other"))[0])
+    df["provider"] = df["model"].map(lambda m: _MODEL_META.get(m, (m, "other"))[1])
+    df["is_refused"] = df["modal_compliance"].isin(["direct_refusal", "indirect_refusal"])
 
     rows = []
-    for (display, provider, tier), grp in df.groupby(
-        ["display", "provider", "tier"]
-    ):
+    for (display, provider, tier), grp in df.groupby(["display", "provider", "tier"]):
         n = len(grp)
         n_refused = int(grp["is_refused"].sum())
         rate, lo, hi = _wilson_ci(n_refused, n)
@@ -177,12 +170,13 @@ def _overall_order(stats_df: pd.DataFrame) -> list[str]:
         .apply(lambda r: r["n_refused"] / r["n"], axis=1)
         .sort_values(ascending=False)
     )
-    return overall.index.tolist()
+    return [str(m) for m in overall.index]
 
 
 # ---------------------------------------------------------------------------
 # Figure 1 — Provider gradient (benign-tier refusal rates, all 19 models)
 # ---------------------------------------------------------------------------
+
 
 def figure1_provider_gradient(
     df: pd.DataFrame,
@@ -251,18 +245,14 @@ def figure1_provider_gradient(
     ax.set_ylim(0, 1.08)
     ax.axhline(0, color="black", linewidth=0.5)
     ax.grid(axis="y", alpha=0.3, zorder=0)
-    ax.set_title(
-        "Provider gradient: refusal rate on benign protein-design prompts"
-    )
+    ax.set_title("Provider gradient: refusal rate on benign protein-design prompts")
 
     # Legend — one patch per provider (deduplicated, preserve order)
     seen: dict[str, str] = {}
     for provider, color in zip(df[provider_col], colors, strict=False):
         if provider not in seen:
             seen[provider] = color
-    patches = [
-        mpatches.Patch(color=c, label=p.upper()) for p, c in seen.items()
-    ]
+    patches = [mpatches.Patch(color=c, label=p.upper()) for p, c in seen.items()]
     ax.legend(handles=patches, loc="upper right", fontsize=8, ncol=2)
     fig.tight_layout()
     return fig
@@ -271,6 +261,7 @@ def figure1_provider_gradient(
 # ---------------------------------------------------------------------------
 # Figure 2 — Subdomain heatmap (model × subdomain)
 # ---------------------------------------------------------------------------
+
 
 def figure2_subdomain_heatmap(
     df: pd.DataFrame,
@@ -294,9 +285,7 @@ def figure2_subdomain_heatmap(
     >>> fig is not None
     True
     """
-    pivot = df.pivot_table(
-        index=model_col, columns=subdomain_col, values=rate_col, aggfunc="mean"
-    )
+    pivot = df.pivot_table(index=model_col, columns=subdomain_col, values=rate_col, aggfunc="mean")
     if model_order:
         pivot = pivot.reindex([m for m in model_order if m in pivot.index])
 
@@ -305,7 +294,9 @@ def figure2_subdomain_heatmap(
     ax.set_xticks(np.arange(len(pivot.columns)))
     ax.set_xticklabels(
         [c.replace("_", " ") for c in pivot.columns],
-        rotation=40, ha="right", fontsize=9,
+        rotation=40,
+        ha="right",
+        fontsize=9,
     )
     ax.set_yticks(np.arange(len(pivot.index)))
     ax.set_yticklabels(pivot.index, fontsize=9)
@@ -316,8 +307,11 @@ def figure2_subdomain_heatmap(
             val = pivot.values[row_i, col_i]
             if not np.isnan(val):
                 ax.text(
-                    col_i, row_i, f"{val:.0%}",
-                    ha="center", va="center",
+                    col_i,
+                    row_i,
+                    f"{val:.0%}",
+                    ha="center",
+                    va="center",
                     fontsize=6.5,
                     color="white" if val > 0.55 else "black",
                 )
@@ -325,9 +319,7 @@ def figure2_subdomain_heatmap(
     cbar = plt.colorbar(im, ax=ax, shrink=0.8)
     cbar.set_label("Refusal rate (strict)", fontsize=9)
     cbar.ax.tick_params(labelsize=8)
-    ax.set_title(
-        "Refusal rate by model and protein-design subdomain"
-    )
+    ax.set_title("Refusal rate by model and protein-design subdomain")
     fig.tight_layout()
     return fig
 
@@ -335,6 +327,7 @@ def figure2_subdomain_heatmap(
 # ---------------------------------------------------------------------------
 # Figure 3 — Opus longitudinal (per-tier lines: 4.5 → 4.6 → 4.7)
 # ---------------------------------------------------------------------------
+
 
 def figure3_opus_longitudinal(
     df: pd.DataFrame,
@@ -378,11 +371,7 @@ def figure3_opus_longitudinal(
     fig, ax = plt.subplots(figsize=(7, 4.5))
 
     for tier in _TIERS:
-        sub = (
-            df[df[tier_col] == tier]
-            .set_index(model_col)
-            .reindex(opus_models)
-        )
+        sub = df[df[tier_col] == tier].set_index(model_col).reindex(opus_models)
         rates = np.asarray(sub[rate_col], dtype=float)
         # Use raw rate for labels; fall back to Wilson center if column absent
         if raw_rate_col in sub.columns:
@@ -397,11 +386,11 @@ def figure3_opus_longitudinal(
             hi = np.asarray(sub[ci_hi_col], dtype=float)
             ax.fill_between(x, lo, hi, alpha=0.15, color=color, zorder=2)
         # Annotate using raw rate so 235/235 → "100%", not Wilson centre "99%"
-        for xi, lrate in zip(x, label_rates):
+        for xi, lrate in zip(x, label_rates, strict=True):
             if not np.isnan(lrate):
                 ax.annotate(
                     f"{round(lrate * 100):.0f}%",
-                    (xi, rates[xi]),
+                    (float(xi), float(rates[xi])),
                     textcoords="offset points",
                     xytext=(0, 7),
                     ha="center",
@@ -415,9 +404,7 @@ def figure3_opus_longitudinal(
     ax.set_ylim(-0.05, 1.15)
     ax.grid(axis="y", alpha=0.3)
     ax.legend(title="Tier", loc="center left", bbox_to_anchor=(1.01, 0.5))
-    ax.set_title(
-        "Longitudinal refusal trajectory: Opus 4.5 / 4.6 / 4.7"
-    )
+    ax.set_title("Longitudinal refusal trajectory: Opus 4.5 / 4.6 / 4.7")
     fig.tight_layout()
     return fig
 
@@ -425,6 +412,7 @@ def figure3_opus_longitudinal(
 # ---------------------------------------------------------------------------
 # Figure 4 — Refusal taxonomy (stacked bar, top N models by refusal count)
 # ---------------------------------------------------------------------------
+
 
 def figure4_refusal_taxonomy(
     df: pd.DataFrame,
@@ -464,16 +452,18 @@ def figure4_refusal_taxonomy(
     for col_i, col in enumerate(pivot_norm.columns):
         vals = np.asarray(pivot_norm[col], dtype=float)
         ax.bar(
-            top_models, vals, bottom=bottom,
-            label=col, color=cmap(col_i), alpha=0.88,
+            top_models,
+            vals,
+            bottom=bottom,
+            label=col,
+            color=cmap(col_i),
+            alpha=0.88,
         )
         bottom += vals
     ax.set_ylabel("Fraction of refusals")
     ax.set_ylim(0, 1.05)
     ax.legend(loc="lower right", fontsize=8, ncol=2)
-    ax.set_title(
-        "Refusal reason taxonomy for highest-refusing models"
-    )
+    ax.set_title("Refusal reason taxonomy for highest-refusing models")
     plt.xticks(rotation=20, ha="right", fontsize=9)
     fig.tight_layout()
     return fig
@@ -482,6 +472,7 @@ def figure4_refusal_taxonomy(
 # ---------------------------------------------------------------------------
 # Figure 5 — Tier comparison (grouped bar, all 19 models sorted by rate)
 # ---------------------------------------------------------------------------
+
 
 def figure5_tier_comparison(
     df: pd.DataFrame,
@@ -513,9 +504,7 @@ def figure5_tier_comparison(
     """
     if model_order is None:
         # Sort by overall (mean across tiers) descending
-        overall = (
-            df.groupby(model_col)[rate_col].mean().sort_values(ascending=False)
-        )
+        overall = df.groupby(model_col)[rate_col].mean().sort_values(ascending=False)
         model_order = overall.index.tolist()
 
     x = np.arange(len(model_order))
@@ -524,15 +513,13 @@ def figure5_tier_comparison(
 
     fig, ax = plt.subplots(figsize=(13, 5))
     for i, tier in enumerate(_TIERS):
-        sub = (
-            df[df[tier_col] == tier]
-            .set_index(model_col)
-            .reindex(model_order)
-        )
+        sub = df[df[tier_col] == tier].set_index(model_col).reindex(model_order)
         rates = np.asarray(sub[rate_col].fillna(0), dtype=float)
         offset = (i - (n_tiers - 1) / 2) * width
-        bars = ax.bar(
-            x + offset, rates, width,
+        ax.bar(
+            x + offset,
+            rates,
+            width,
             label=_TIER_LABELS[tier],
             color=_TIER_COLORS[tier],
             alpha=0.88,
@@ -541,7 +528,8 @@ def figure5_tier_comparison(
             ci_lo = np.asarray(sub[ci_lo_col].fillna(0), dtype=float)
             ci_hi = np.asarray(sub[ci_hi_col].fillna(0), dtype=float)
             ax.errorbar(
-                x + offset, rates,
+                x + offset,
+                rates,
                 yerr=[(rates - ci_lo).clip(0), (ci_hi - rates).clip(0)],
                 fmt="none",
                 color="black",
@@ -555,9 +543,7 @@ def figure5_tier_comparison(
     ax.set_ylim(0, 1.12)
     ax.legend(title="Tier", fontsize=9)
     ax.grid(axis="y", alpha=0.3)
-    ax.set_title(
-        "Tier-stratified refusal rates: benign vs borderline vs dual-use"
-    )
+    ax.set_title("Tier-stratified refusal rates: benign vs borderline vs dual-use")
     fig.tight_layout()
     return fig
 
@@ -565,6 +551,7 @@ def figure5_tier_comparison(
 # ---------------------------------------------------------------------------
 # Figure 6 — WMDP-Bio capability vs refusal rate scatter
 # ---------------------------------------------------------------------------
+
 
 def figure6_wmdp_scatter(
     per_model_df: pd.DataFrame,
@@ -594,10 +581,7 @@ def figure6_wmdp_scatter(
     df = df.dropna(subset=["wmdp", rate_col])
 
     fig, ax = plt.subplots(figsize=(7, 5))
-    colors = [
-        _provider_color(p)
-        for p in df.get(provider_col, pd.Series(["other"] * len(df)))
-    ]
+    colors = [_provider_color(p) for p in df.get(provider_col, pd.Series(["other"] * len(df)))]
     ax.scatter(df["wmdp"], df[rate_col], c=colors, s=80, zorder=3)
     for _, row in df.iterrows():
         ax.annotate(
@@ -612,8 +596,12 @@ def figure6_wmdp_scatter(
         m_coef, b_coef = np.polyfit(df["wmdp"], df[rate_col], 1)
         x_line = np.linspace(float(df["wmdp"].min()), float(df["wmdp"].max()), 50)
         ax.plot(
-            x_line, m_coef * x_line + b_coef,
-            color="black", linewidth=1, linestyle="--", alpha=0.6,
+            x_line,
+            m_coef * x_line + b_coef,
+            color="black",
+            linewidth=1,
+            linestyle="--",
+            alpha=0.6,
         )
 
     ax.set_xlabel("WMDP-Bio score")
@@ -628,6 +616,7 @@ def figure6_wmdp_scatter(
 # ---------------------------------------------------------------------------
 # Save helper
 # ---------------------------------------------------------------------------
+
 
 def save_figure(fig: Any, name: str, output_dir: Path | None = None) -> None:
     """Save a figure as both PDF (vector) and PNG (300 dpi) to the figures directory.
@@ -648,6 +637,7 @@ def save_figure(fig: Any, name: str, output_dir: Path | None = None) -> None:
 # ---------------------------------------------------------------------------
 # CLI — loads adjudicated.csv and generates all six figures
 # ---------------------------------------------------------------------------
+
 
 @click.command()
 @click.option("--all", "all_figs", is_flag=True, help="Regenerate all figures.")
@@ -706,12 +696,8 @@ def main(all_figs: bool, results_dir: str, output_dir: str) -> None:
     # ------------------------------------------------------------------
     click.echo("Generating Figure 2 …")
     raw2 = raw.copy()
-    raw2["display"] = raw2["model"].map(
-        lambda m: _MODEL_META.get(m, (m, "other"))[0]
-    )
-    raw2["is_refused"] = raw2["modal_compliance"].isin(
-        ["direct_refusal", "indirect_refusal"]
-    )
+    raw2["display"] = raw2["model"].map(lambda m: _MODEL_META.get(m, (m, "other"))[0])
+    raw2["is_refused"] = raw2["modal_compliance"].isin(["direct_refusal", "indirect_refusal"])
     sub_heat = (
         raw2.groupby(["display", "subdomain"])["is_refused"]
         .mean()
@@ -725,11 +711,6 @@ def main(all_figs: bool, results_dir: str, output_dir: str) -> None:
     # Figure 3 — Opus longitudinal (per-tier)
     # ------------------------------------------------------------------
     click.echo("Generating Figure 3 …")
-    opus_ids = [
-        "anthropic/claude-opus-4.5",
-        "anthropic/claude-opus-4.6",
-        "anthropic/claude-opus-4.7",
-    ]
     opus_labels = ["Opus 4.5", "Opus 4.6", "Opus 4.7"]
     opus_stats = stats[stats["model"].isin(opus_labels)].copy()
     fig3 = figure3_opus_longitudinal(
@@ -743,13 +724,11 @@ def main(all_figs: bool, results_dir: str, output_dir: str) -> None:
     # ------------------------------------------------------------------
     click.echo("Generating Figure 4 …")
     raw4 = raw.copy()
-    raw4["model"] = raw4["model"].map(
-        lambda m: _MODEL_META.get(m, (m, "other"))[0]
-    )
+    raw4["model"] = raw4["model"].map(lambda m: _MODEL_META.get(m, (m, "other"))[0])
     try:
         fig4 = figure4_refusal_taxonomy(raw4, top_n_models=6)
         save_figure(fig4, "figure4_refusal_taxonomy", output_path)
-    except Exception as exc:  # noqa: BLE001
+    except Exception as exc:
         click.echo(f"  Figure 4 skipped ({exc})")
 
     # ------------------------------------------------------------------
@@ -766,7 +745,7 @@ def main(all_figs: bool, results_dir: str, output_dir: str) -> None:
     if wmdp_path.exists():
         click.echo("Generating Figure 6 …")
         wmdp_df = pd.read_csv(wmdp_path)
-        wmdp_scores = dict(zip(wmdp_df["model"], wmdp_df["score"]))
+        wmdp_scores = dict(zip(wmdp_df["model"], wmdp_df["score"], strict=True))
         benign_stats = stats[stats["tier"] == "benign"].copy()
         fig6 = figure6_wmdp_scatter(benign_stats, wmdp_scores)
         save_figure(fig6, "figure6_wmdp_scatter", output_path)

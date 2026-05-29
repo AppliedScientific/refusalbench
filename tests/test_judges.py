@@ -211,7 +211,7 @@ def test_build_judges_from_config_judge_ids_match_config() -> None:
         provider_override=MockProvider('{"compliance": "compliance", "reason": "other"}')
     )
     ids = [j.judge_id for j in judges]
-    assert "nvidia_nemotron" in ids
+    assert "microsoft_phi4" in ids
     assert "cohere_command_r_plus" in ids
     assert "ai21_jamba" in ids
 

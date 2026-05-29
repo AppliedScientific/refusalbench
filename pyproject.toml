@@ -16,12 +16,18 @@ keywords = ["benchmark", "refusal", "alignment", "llm-evaluation", "protein-desi
 classifiers = [
     "Development Status :: 3 - Alpha",
     "Intended Audience :: Science/Research",
-    "License :: OSI Approved :: MIT License",
     "Programming Language :: Python :: 3",
     "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
     "Topic :: Scientific/Engineering :: Artificial Intelligence",
     "Topic :: Scientific/Engineering :: Bio-Informatics",
+]
+dependencies = [
+    "pandas>=2.0,<3",
+    "scipy>=1.11",
+    "matplotlib>=3.7",
+    "click>=8.1",
+    "krippendorff>=0.6",
 ]
 
 [project.urls]
@@ -30,14 +36,6 @@ Repository    = "https://github.com/AppliedScientific/refusalbench"
 "Bug Tracker" = "https://github.com/AppliedScientific/refusalbench/issues"
 Dataset       = "https://huggingface.co/datasets/AppliedScientific/refusalbench"
 Space         = "https://huggingface.co/spaces/AppliedScientific/refusalbench"
-
-dependencies = [
-    "pandas>=2.0,<3",
-    "scipy>=1.11",
-    "matplotlib>=3.7",
-    "click>=8.1",
-    "krippendorff>=0.6",
-]
 
 [project.optional-dependencies]
 providers = [
@@ -89,6 +87,12 @@ branch = true
 omit = [
     # CLI entrypoint glue; exercised by pilot scripts not unit tests.
     "src/refusalbench/scripts_entry.py",
+    # Provider clients require live API credentials, so they are excluded from
+    # coverage measurement (see the [tool.coverage.report] note below — this is
+    # the exclusion that the 78% threshold assumes).
+    "src/refusalbench/providers/anthropic.py",
+    "src/refusalbench/providers/bedrock.py",
+    "src/refusalbench/providers/openrouter.py",
 ]
 
 [tool.coverage.report]
@@ -116,7 +120,7 @@ select = [
 ]
 
 [tool.ruff.lint.per-file-ignores]
-"src/refusalbench/analysis/figures.py" = ["RUF001", "RUF002"]
+"src/refusalbench/analysis/figures.py" = ["RUF001", "RUF002", "RUF003"]
 "tests/*" = ["E402"]  # tests sometimes import after fixture setup
 
 [tool.mypy]
