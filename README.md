@@ -23,7 +23,7 @@ Models evaluated after the v1.1-frozen snapshot are appended to the committed da
 
 | Model | Provider | Released | Tested | Council | Snapshot | Headline |
 |---|---|---|---|---|---|---|
-| **Claude Opus 4.8** \* | Anthropic | late May 2026 | 2026-05-29 | **v1.3** (rotated) | post-v1.1 | PC Tier A (TPR 100 %); benign 57 %, dual-use 100 %, Youden's J **+0.43** |
+| **Claude Opus 4.8** \* | Anthropic | [2026-05-28](https://www.anthropic.com/news/claude-opus-4-8) | 2026-05-29 | **v1.3** (rotated) | post-v1.1 | PC Tier A (TPR 100 %); benign 57 %, dual-use 100 %, Youden's J **+0.43** |
 
 The v1.1-frozen panel (18 frontier models + Llama 3.3 70B control + NVIDIA Nemotron 3 Super 120B, all under the v1.1 council) remains the canonical snapshot referenced in the manuscript. Opus 4.8 walks back Opus 4.7's benign over-refusal (77 % → 57 %), recovering discrimination (Youden's J +0.23 → +0.43) while holding dual-use refusal at 100 %.
 
