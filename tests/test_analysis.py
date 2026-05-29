@@ -38,14 +38,21 @@ def subdomain_df() -> pd.DataFrame:
 
 @pytest.fixture()
 def opus_df() -> pd.DataFrame:
-    return pd.DataFrame(
-        {
-            "model": ["claude-opus-4-5", "claude-opus-4-6", "claude-opus-4-7"],
-            "refusal_rate": [0.6, 0.4, 0.7],
-            "ci_lo": [0.4, 0.25, 0.55],
-            "ci_hi": [0.75, 0.55, 0.82],
-        }
-    )
+    # figure3 draws one line per tier, so the frame needs a `tier` column.
+    rows = []
+    for model in ("Opus 4.5", "Opus 4.6", "Opus 4.7"):
+        for tier in ("benign", "borderline", "dual_use"):
+            rows.append(
+                {
+                    "model": model,
+                    "tier": tier,
+                    "refusal_rate": 0.6,
+                    "raw_rate": 0.6,
+                    "ci_lo": 0.45,
+                    "ci_hi": 0.75,
+                }
+            )
+    return pd.DataFrame(rows)
 
 
 @pytest.fixture()

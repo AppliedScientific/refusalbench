@@ -40,3 +40,24 @@ jobs:
 
       - name: Validate prompts
         run: python scripts/validate_prompts.py
+
+  # Bare `pip install -e .` (no extras) + import the runtime deps, catching the
+  # #3/#4 regression the extras-based `test` job can't.
+  base-install:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Bare editable install (no extras)
+        run: |
+          python -m pip install --upgrade pip
+          pip install -e .
+
+      - name: Verify runtime dependencies were installed
+        run: python -c "import pandas, scipy, matplotlib, click, krippendorff, refusalbench"
