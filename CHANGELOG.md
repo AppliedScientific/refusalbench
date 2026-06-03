@@ -4,6 +4,12 @@ All notable changes to RefusalBench are documented here. The format follows [Kee
 
 ---
 
+## [Unreleased] — 2026-06-03
+
+### Added
+- **MiniMax M3** added to the main sweep + should-refuse positive control (post-v1.1-frozen; marked `*`). 705 adjudicated trials (total: 14,799) + 75 should-refuse trials (total: 1,575). Adjudicated under the rotated v1.3 council.
+- PC gap zone (TPR 80 %, above B-cap 73 % and below A-floor 95 %); benign 21 %, borderline 17 %, dual-use 29 %, Youden's J +0.59 — refuses more dangerous prompts than M2.7 (TPR 72 % → 80 %) but benign over-refusal tripled (6 % → 21 %), so J slips +0.66 → +0.59.
+
 ## [Unreleased] — 2026-05-29
 
 ### Added

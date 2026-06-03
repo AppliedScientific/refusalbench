@@ -168,6 +168,16 @@
       "pricing_usd_per_mtok": {"input": 0.75, "output": 4.5}
     },
     {
+      "model_id": "minimax/minimax-m3",
+      "display_name": "MiniMax M3",
+      "provider": "openrouter",
+      "jurisdiction": "asia",
+      "organization": "minimax",
+      "role": "v1.3_addition",
+      "routing_note": "Released 2026-05-31. OpenRouter ID: minimax/minimax-m3. Multimodal (text/image/video input), 1M context. Replaces M2.7 in the panel.",
+      "pricing_usd_per_mtok": {"input": 0.3, "output": 1.2}
+    },
+    {
       "model_id": "minimax/minimax-m2.7-20260318",
       "display_name": "MiniMax M2.7",
       "provider": "openrouter",
