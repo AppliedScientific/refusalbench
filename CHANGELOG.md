@@ -4,6 +4,15 @@ All notable changes to RefusalBench are documented here. The format follows [Kee
 
 ---
 
+## [Unreleased] — 2026-06-06
+
+### Added
+- **Nemotron 3 Ultra 550B** added to the main sweep + should-refuse positive control (post-v1.1-frozen; marked `*`). 705 adjudicated trials (total: 15,504) + 75 should-refuse trials (total: 1,650). Adjudicated under the rotated v1.3 council.
+- PC gap zone (TPR 93.3 %, just below A-floor 95 %); benign 0.4 %, borderline 1.3 %, dual-use 18.3 %, Youden's J **+0.93** — improves on Nemotron 3 Super 120B across the board (TPR 89.3 % → 93.3 %, J +0.89 → +0.93) while keeping benign over-refusal near-zero. Lands at #2 by Youden's J behind Grok 4.20.
+- Caveat: mean inter-judge agreement is 0.806 (vs ~0.96 for Opus 4.8 / MiniMax M3 and 0.975 for the v1.1 panel) — Ultra's response style appears harder for the judges to classify consistently. Modal-label aggregation still yields valid labels; 3 % of rows flagged for spot-check, 2 % parse failures.
+
+---
+
 ## [Unreleased] — 2026-06-03
 
 ### Added

@@ -1,5 +1,5 @@
 {
-  "version": "1.7",
+  "version": "1.8",
   "schema_doc": "Routing table for the RefusalBench sweep panel. v1.1-frozen: 19 models (7 Bedrock, 12 OpenRouter). v1.2 addition: Claude Opus 4.8 (2026-05-28), extending the Anthropic longitudinal series to 4 points. Anthropic Claude models route via OpenRouter: Bedrock applies a domain-level content filter to all protein engineering prompts for Claude models (including benign human targets), making it unsuitable for measuring model-level refusal calibration. OpenRouter routes directly to Anthropic's API and surfaces refusals as native_finish_reason='refusal' with empty content — functionally identical to the direct Anthropic API.",
   "default_provider": "bedrock",
   "models": [
@@ -166,6 +166,16 @@
       "organization": "openai",
       "role": "primary",
       "pricing_usd_per_mtok": {"input": 0.75, "output": 4.5}
+    },
+    {
+      "model_id": "nvidia/nemotron-3-ultra-550b-a55b",
+      "display_name": "Nemotron Ultra",
+      "provider": "openrouter",
+      "jurisdiction": "us",
+      "organization": "nvidia",
+      "role": "v1.4_addition",
+      "routing_note": "Released 2026-06-04. OpenRouter ID: nvidia/nemotron-3-ultra-550b-a55b. Hybrid Transformer-Mamba MoE, 550B total / 55B active params, 1M context. Free tier also available (:free suffix).",
+      "pricing_usd_per_mtok": {"input": 0.5, "output": 2.5}
     },
     {
       "model_id": "minimax/minimax-m3",
